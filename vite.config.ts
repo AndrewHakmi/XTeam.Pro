@@ -64,5 +64,10 @@ export default defineConfig({
         },
       }
     }
+  },
+  preview: {
+    host: '0.0.0.0',
+    port: process.env.PORT ? parseInt(process.env.PORT) : 4173,
+    allowedHosts: ['whale-app-re2tl.ondigitalocean.app', '.ondigitalocean.app']
   }
 })
