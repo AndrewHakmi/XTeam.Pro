@@ -6,11 +6,15 @@
   "scripts": {
     "dev": "concurrently \"npm run client:dev\" \"npm run server:dev\"",
     "build": "tsc -b && vite build",
+    "start": "python backend/main.py",
     "lint": "eslint .",
     "preview": "vite preview",
     "check": "tsc -b --noEmit",
     "client:dev": "vite",
     "server:dev": "nodemon"
+  },
+  "engines": {
+    "node": "20.x"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.1",
@@ -54,7 +58,7 @@
     "sqlite3": "^5.1.7",
     "tailwind-merge": "^3.0.2",
     "uuid": "^11.1.0",
-    "zod": "^4.1.5",
+    "zod": "^3.23.8",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
