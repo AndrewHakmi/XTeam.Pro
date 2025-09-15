@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"npm run client:dev\" \"npm run server:dev\"",
     "build": "tsc -b && vite build",
-    "start": "python backend/main.py",
+    "start": "node start.cjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "check": "tsc -b --noEmit",
