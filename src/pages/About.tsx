@@ -26,10 +26,10 @@ export default function About() {
   const teamMembers: TeamMember[] = [
     {
       id: 'sarah-chen',
-      name: 'Sarah Chen',
-      position: 'CEO & Co-Founder',
-      bio: 'Former AI Research Director at Google with 15+ years in machine learning and enterprise automation. Led teams that deployed AI solutions for Fortune 500 companies, generating over $2B in cost savings.',
-      expertise: ['AI Strategy', 'Machine Learning', 'Enterprise Architecture', 'Team Leadership'],
+      name: t('about.teamMembers.sarahChen.name'),
+      position: t('about.teamMembers.sarahChen.position'),
+      bio: t('about.teamMembers.sarahChen.bio'),
+      expertise: t('about.teamMembers.sarahChen.expertise', { returnObjects: true }) as string[],
       image: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Asian%20woman%20CEO%20in%20business%20attire%2C%20confident%20smile%2C%20modern%20office%20background%2C%20high%20quality%20portrait&image_size=square',
       linkedin: 'https://linkedin.com/in/sarahchen',
       twitter: 'https://twitter.com/sarahchen_ai',
@@ -37,50 +37,50 @@ export default function About() {
     },
     {
       id: 'michael-rodriguez',
-      name: 'Dr. Michael Rodriguez',
-      position: 'CTO & Co-Founder',
-      bio: 'PhD in Computer Science from MIT, former Principal Engineer at Microsoft Azure AI. Architect of scalable AI systems serving millions of users. Published 50+ research papers in top-tier AI conferences.',
-      expertise: ['Deep Learning', 'Cloud Architecture', 'AI Research', 'System Design'],
+      name: t('about.teamMembers.michaelRodriguez.name'),
+      position: t('about.teamMembers.michaelRodriguez.position'),
+      bio: t('about.teamMembers.michaelRodriguez.bio'),
+      expertise: t('about.teamMembers.michaelRodriguez.expertise', { returnObjects: true }) as string[],
       image: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Hispanic%20male%20CTO%20with%20glasses%2C%20friendly%20expression%2C%20tech%20office%20background%2C%20high%20quality%20portrait&image_size=square',
       linkedin: 'https://linkedin.com/in/michaelrodriguez',
       email: 'michael@xteam.pro'
     },
     {
       id: 'jennifer-walsh',
-      name: 'Jennifer Walsh',
-      position: 'VP of Customer Success',
-      bio: 'Former McKinsey consultant with 12+ years helping enterprises optimize operations. Led digital transformation initiatives for 100+ companies across various industries.',
-      expertise: ['Business Strategy', 'Change Management', 'Customer Success', 'Process Optimization'],
+      name: t('about.teamMembers.jenniferWalsh.name'),
+      position: t('about.teamMembers.jenniferWalsh.position'),
+      bio: t('about.teamMembers.jenniferWalsh.bio'),
+      expertise: t('about.teamMembers.jenniferWalsh.expertise', { returnObjects: true }) as string[],
       image: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Caucasian%20woman%20VP%20in%20business%20suit%2C%20warm%20smile%2C%20corporate%20office%20setting%2C%20high%20quality%20portrait&image_size=square',
       linkedin: 'https://linkedin.com/in/jenniferwalsh',
       email: 'jennifer@xteam.pro'
     },
     {
       id: 'david-kim',
-      name: 'David Kim',
-      position: 'Head of AI Engineering',
-      bio: 'Former Senior ML Engineer at Tesla Autopilot team. Expert in computer vision, NLP, and real-time AI systems. Built AI models that process millions of data points daily.',
-      expertise: ['Computer Vision', 'NLP', 'MLOps', 'Real-time Systems'],
+      name: t('about.teamMembers.davidKim.name'),
+      position: t('about.teamMembers.davidKim.position'),
+      bio: t('about.teamMembers.davidKim.bio'),
+      expertise: t('about.teamMembers.davidKim.expertise', { returnObjects: true }) as string[],
       image: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Korean%20male%20engineer%20in%20casual%20business%20attire%2C%20confident%20look%2C%20modern%20tech%20office%2C%20high%20quality%20portrait&image_size=square',
       linkedin: 'https://linkedin.com/in/davidkim',
       email: 'david@xteam.pro'
     },
     {
       id: 'amanda-foster',
-      name: 'Amanda Foster',
-      position: 'Head of Product',
-      bio: 'Former Product Manager at Salesforce with 10+ years designing enterprise software. Led product teams that launched AI features used by millions of businesses worldwide.',
-      expertise: ['Product Strategy', 'UX Design', 'Enterprise Software', 'Agile Development'],
+      name: t('about.teamMembers.amandaFoster.name'),
+      position: t('about.teamMembers.amandaFoster.position'),
+      bio: t('about.teamMembers.amandaFoster.bio'),
+      expertise: t('about.teamMembers.amandaFoster.expertise', { returnObjects: true }) as string[],
       image: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20African%20American%20woman%20product%20manager%2C%20bright%20smile%2C%20creative%20office%20space%2C%20high%20quality%20portrait&image_size=square',
       linkedin: 'https://linkedin.com/in/amandafoster',
       email: 'amanda@xteam.pro'
     },
     {
       id: 'robert-johnson',
-      name: 'Robert Johnson',
-      position: 'VP of Sales',
-      bio: 'Former Enterprise Sales Director at IBM with 15+ years in B2B technology sales. Closed $500M+ in enterprise deals and built high-performing sales teams.',
-      expertise: ['Enterprise Sales', 'Business Development', 'Client Relations', 'Team Building'],
+      name: t('about.teamMembers.robertJohnson.name'),
+      position: t('about.teamMembers.robertJohnson.position'),
+      bio: t('about.teamMembers.robertJohnson.bio'),
+      expertise: t('about.teamMembers.robertJohnson.expertise', { returnObjects: true }) as string[],
       image: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Caucasian%20male%20VP%20sales%20in%20navy%20suit%2C%20professional%20smile%2C%20executive%20office%20background%2C%20high%20quality%20portrait&image_size=square',
       linkedin: 'https://linkedin.com/in/robertjohnson',
       email: 'robert@xteam.pro'
@@ -89,65 +89,81 @@ export default function About() {
 
   const milestones: Milestone[] = [
     {
-      year: '2019',
-      title: 'Company Founded',
-      description: 'Sarah and Michael founded XTeam.Pro with a vision to democratize AI for businesses of all sizes.'
+      year: t('about.milestones.founded.year'),
+      title: t('about.milestones.founded.title'),
+      description: t('about.milestones.founded.description')
     },
     {
-      year: '2020',
-      title: 'First Enterprise Client',
-      description: 'Successfully deployed our first AI automation solution, saving our client $2M annually.'
+      year: t('about.milestones.firstClient.year'),
+      title: t('about.milestones.firstClient.title'),
+      description: t('about.milestones.firstClient.description')
     },
     {
-      year: '2021',
-      title: 'Series A Funding',
-      description: 'Raised $15M Series A to expand our AI platform and grow the team.'
+      year: t('about.milestones.seriesA.year'),
+      title: t('about.milestones.seriesA.title'),
+      description: t('about.milestones.seriesA.description')
     },
     {
-      year: '2022',
-      title: '100+ Successful Deployments',
-      description: 'Reached milestone of 100 successful AI implementations across various industries.'
+      year: t('about.milestones.hundredClients.year'),
+      title: t('about.milestones.hundredClients.title'),
+      description: t('about.milestones.hundredClients.description')
     },
     {
-      year: '2023',
-      title: 'AI Innovation Award',
-      description: 'Recognized as "AI Innovation Company of the Year" by TechCrunch.'
+      year: t('about.milestones.aiAward.year'),
+      title: t('about.milestones.aiAward.title'),
+      description: t('about.milestones.aiAward.description')
     },
     {
-      year: '2024',
-      title: 'Global Expansion',
-      description: 'Expanded operations to Europe and Asia, serving clients across 25+ countries.'
+      year: t('about.milestones.globalExpansion.year'),
+      title: t('about.milestones.globalExpansion.title'),
+      description: t('about.milestones.globalExpansion.description')
     }
   ];
 
   const values = [
     {
       icon: <Target className="w-8 h-8" />,
-      title: 'Results-Driven',
-      description: 'We measure success by the tangible impact we create for our clients - cost savings, efficiency gains, and revenue growth.'
+      title: t('about.values.resultsDriven.title'),
+      description: t('about.values.resultsDriven.description')
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: 'Human-Centered AI',
-      description: 'Our AI solutions augment human capabilities rather than replace them, creating better experiences for employees and customers.'
+      title: t('about.values.humanCenteredAI.title'),
+      description: t('about.values.humanCenteredAI.description')
     },
     {
       icon: <Award className="w-8 h-8" />,
-      title: 'Excellence',
-      description: 'We maintain the highest standards in everything we do, from code quality to customer service.'
+      title: t('about.values.excellence.title'),
+      description: t('about.values.excellence.description')
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: 'Transparency',
-      description: 'We believe in open communication, clear pricing, and honest assessments of what AI can and cannot do.'
+      title: t('about.values.transparency.title'),
+      description: t('about.values.transparency.description')
     }
   ];
 
   const stats = [
-    { number: '500+', label: 'AI Projects Delivered' },
-    { number: '$100M+', label: 'Client Cost Savings' },
-    { number: '25+', label: 'Countries Served' },
-    { number: '98%', label: 'Client Satisfaction' }
+    {
+      number: t('about.stats.clientsServed.number'),
+      label: t('about.stats.clientsServed.label'),
+      description: t('about.stats.clientsServed.description')
+    },
+    {
+      number: t('about.stats.costSavings.number'),
+      label: t('about.stats.costSavings.label'),
+      description: t('about.stats.costSavings.description')
+    },
+    {
+      number: t('about.stats.uptime.number'),
+      label: t('about.stats.uptime.label'),
+      description: t('about.stats.uptime.description')
+    },
+    {
+      number: t('about.stats.support.number'),
+      label: t('about.stats.support.label'),
+      description: t('about.stats.support.description')
+    }
   ];
 
   return (

@@ -172,13 +172,13 @@ export default function Audit() {
   };
 
   const validateAuditData = (): string | null => {
-    if (!auditData.industry) return 'Industry is required';
-    if (!auditData.companySize) return 'Company size is required';
-    if (!auditData.painPoints || auditData.painPoints.length === 0) return 'At least one pain point is required';
-    if (!auditData.currentSystems || auditData.currentSystems.length === 0) return 'At least one current system is required';
-    if (!auditData.kpis || auditData.kpis.length === 0) return 'At least one KPI is required';
-    if (!auditData.contactInfo?.email) return 'Email is required';
-    if (!auditData.contactInfo.email.includes('@')) return 'Valid email is required';
+    if (!auditData.industry) return t('audit.validation.industryRequired');
+    if (!auditData.companySize) return t('audit.validation.companySizeRequired');
+    if (!auditData.painPoints || auditData.painPoints.length === 0) return t('audit.validation.painPointsRequired');
+    if (!auditData.currentSystems || auditData.currentSystems.length === 0) return t('audit.validation.currentSystemsRequired');
+    if (!auditData.kpis || auditData.kpis.length === 0) return t('audit.validation.kpisRequired');
+    if (!auditData.contactInfo?.email) return t('audit.validation.emailRequired');
+    if (!auditData.contactInfo.email.includes('@')) return t('audit.validation.validEmailRequired');
     return null;
   };
 
@@ -198,28 +198,28 @@ export default function Audit() {
 
   const validateSubmissionData = (data: AuditSubmissionRequest): string | null => {
     if (!data.company_name || data.company_name.trim() === '') {
-      return 'Company name is required';
+      return t('audit.validation.companyNameRequired');
     }
     if (!data.industry || data.industry.trim() === '') {
-      return 'Industry is required';
+      return t('audit.validation.industryRequired');
     }
     if (!data.company_size || data.company_size.trim() === '') {
-      return 'Company size is required';
+      return t('audit.validation.companySizeRequired');
     }
     if (!data.current_processes || data.current_processes.length === 0) {
-      return 'At least one current process/system is required';
+      return t('audit.validation.currentProcessRequired');
     }
     if (!data.pain_points || data.pain_points.length === 0) {
-      return 'At least one pain point is required';
+      return t('audit.validation.painPointsRequired');
     }
     if (!data.automation_goals || data.automation_goals.length === 0) {
-      return 'At least one automation goal/KPI is required';
+      return t('audit.validation.automationGoalsRequired');
     }
     if (!data.contact_email || !data.contact_email.includes('@')) {
-      return 'Valid contact email is required';
+      return t('audit.validation.validEmailRequired');
     }
     if (!data.contact_name || data.contact_name.trim() === '') {
-      return 'Contact name is required';
+      return t('audit.validation.contactNameRequired');
     }
     return null;
   };
@@ -265,7 +265,7 @@ export default function Audit() {
             navigate(`/audit/results/${result.audit_id}`);
           }, 2000);
         } else {
-          throw new Error(`Unexpected response format: ${result.message || 'Missing audit_id or invalid status'}`);
+          throw new Error(t('audit.errors.unexpectedResponse'));
         }
       } else {
         // Enhanced error handling for different HTTP status codes
@@ -290,19 +290,19 @@ export default function Audit() {
       }
     } catch (error) {
       console.error('Audit submission error:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
+      const errorMessage = error instanceof Error ? error.message : t('audit.errors.unknownError');
       
       // More user-friendly error messages
       let displayMessage = errorMessage;
       if (errorMessage.includes('Failed to fetch') || errorMessage.includes('NetworkError')) {
-        displayMessage = 'Network error: Please check your internet connection and try again.';
+        displayMessage = t('audit.errors.networkError');
       } else if (errorMessage.includes('422')) {
-        displayMessage = 'Validation error: Please check all required fields are filled correctly.';
+        displayMessage = t('audit.errors.validationError');
       } else if (errorMessage.includes('500')) {
-        displayMessage = 'Server error: Please try again later or contact support.';
+        displayMessage = t('audit.errors.serverError');
       }
       
-      alert(`Audit submission failed: ${displayMessage}`);
+      alert(`${t('audit.errors.submissionFailed')}: ${displayMessage}`);
     } finally {
       setIsSubmitting(false);
     }
@@ -336,9 +336,9 @@ export default function Audit() {
           className="bg-white rounded-2xl shadow-xl p-8 text-center max-w-md mx-4"
         >
           <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Audit Complete!</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">{t('audit.completion.title')}</h2>
           <p className="text-gray-600 mb-4">
-            Your AI automation audit has been processed. Redirecting to your personalized results...
+            {t('audit.completion.message')}
           </p>
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
         </motion.div>
@@ -359,9 +359,13 @@ export default function Audit() {
               transition={{ duration: 0.5 }}
             />
           </div>
-          <div className="flex justify-between mt-2 text-sm text-gray-600">
-            <span>{t('audit.progress.step', { current: currentStep + 1, total: auditSteps.length })}</span>
-            <span>{t('audit.progress.complete', { percent: Math.round(progress) })}</span>
+          <div className="flex justify-between mt-2">
+            <div className="text-sm text-gray-600 mb-2">
+              {t('audit.progress', { current: currentStep + 1, total: auditSteps.length })}
+            </div>
+            <div className="text-xs text-gray-500">
+              {Math.round(progress)}% {t('common.complete')}
+            </div>
           </div>
         </div>
 
@@ -506,20 +510,20 @@ function StepContent({ step, value, onChange }: StepContentProps) {
       <div className="space-y-6">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Full Name
+            {t('audit.steps.contact.fields.name')}
           </label>
           <input
             type="text"
             value={contactInfo.name || ''}
             onChange={(e) => onChange({ ...contactInfo, name: e.target.value })}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="Your Full Name"
+            placeholder={t('audit.steps.contact.fields.namePlaceholder')}
           />
         </div>
         
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Email Address *
+            {t('audit.steps.contact.fields.email')}
           </label>
           <input
             type="email"
@@ -527,39 +531,39 @@ function StepContent({ step, value, onChange }: StepContentProps) {
             value={contactInfo.email || ''}
             onChange={(e) => onChange({ ...contactInfo, email: e.target.value })}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="your.email@company.com"
+            placeholder={t('audit.steps.contact.fields.emailPlaceholder')}
           />
         </div>
         
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Company Name
+            {t('audit.steps.contact.fields.company')}
           </label>
           <input
             type="text"
             value={contactInfo.company || ''}
             onChange={(e) => onChange({ ...contactInfo, company: e.target.value })}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="Your Company Name"
+            placeholder={t('audit.steps.contact.fields.companyPlaceholder')}
           />
         </div>
         
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
-            Phone Number (Optional)
+            {t('audit.steps.contact.fields.phone')}
           </label>
           <input
             type="tel"
             value={contactInfo.phone || ''}
             onChange={(e) => onChange({ ...contactInfo, phone: e.target.value })}
             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            placeholder="+1 (555) 123-4567"
+            placeholder={t('audit.steps.contact.fields.phonePlaceholder')}
           />
         </div>
         
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
           <p className="text-sm text-blue-800">
-            <strong>Privacy Notice:</strong> Your information will only be used to generate and deliver your personalized audit report. We respect your privacy and will not share your data with third parties.
+            {t('audit.steps.contact.privacyNotice')}
           </p>
         </div>
       </div>

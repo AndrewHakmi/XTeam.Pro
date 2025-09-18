@@ -85,76 +85,35 @@ export default function Pricing() {
   const pricingTiers: PricingTier[] = [
     {
       id: 'starter',
-      name: 'AI Starter',
-      description: 'Perfect for small businesses looking to automate basic processes',
-      price: billingPeriod === 'monthly' ? '$2,500' : '$25,000',
-      period: billingPeriod === 'monthly' ? '/month' : '/year',
-      features: [
-        'AI Chatbot Integration',
-        'Basic Process Automation',
-        'Email Support',
-        'Up to 1,000 AI interactions/month',
-        'Standard Analytics Dashboard',
-        'Basic Training & Onboarding',
-        '2 Custom Workflows',
-        'Mobile App Access'
-      ],
-      limitations: [
-        'Limited to 2 departments',
-        'Basic customization only',
-        'Standard support hours'
-      ],
-      cta: 'Start Free Trial',
+      name: t('pricing.tiers.starter.name'),
+      description: t('pricing.tiers.starter.description'),
+      price: t('pricing.tiers.starter.price'),
+      period: t('pricing.tiers.starter.period'),
+      features: t('pricing.tiers.starter.features', { returnObjects: true }) as string[],
+      cta: t('pricing.tiers.starter.cta'),
       color: 'blue',
       icon: <Zap className="w-6 h-6" />
     },
     {
       id: 'professional',
-      name: 'AI Professional',
-      description: 'Comprehensive AI solutions for growing businesses',
-      price: billingPeriod === 'monthly' ? '$7,500' : '$75,000',
-      period: billingPeriod === 'monthly' ? '/month' : '/year',
+      name: t('pricing.tiers.professional.name'),
+      description: t('pricing.tiers.professional.description'),
+      price: t('pricing.tiers.professional.price'),
+      period: t('pricing.tiers.professional.period'),
       popular: true,
-      features: [
-        'Advanced AI Automation Suite',
-        'Custom AI Model Training',
-        'Priority Support & Dedicated Manager',
-        'Up to 10,000 AI interactions/month',
-        'Advanced Analytics & Reporting',
-        'Comprehensive Training Program',
-        '10 Custom Workflows',
-        'API Access & Integrations',
-        'Multi-department Deployment',
-        'Performance Optimization',
-        'Monthly Strategy Sessions'
-      ],
-      cta: 'Get Started',
+      features: t('pricing.tiers.professional.features', { returnObjects: true }) as string[],
+      cta: t('pricing.tiers.professional.cta'),
       color: 'indigo',
       icon: <TrendingUp className="w-6 h-6" />
     },
     {
       id: 'enterprise',
-      name: 'AI Enterprise',
-      description: 'Full-scale AI transformation for large organizations',
-      price: 'Custom',
-      period: 'pricing',
-      features: [
-        'Enterprise AI Platform',
-        'Unlimited AI Interactions',
-        '24/7 Dedicated Support Team',
-        'Custom AI Development',
-        'Advanced Security & Compliance',
-        'White-label Solutions',
-        'Unlimited Custom Workflows',
-        'Full API Suite & SDK',
-        'Multi-location Deployment',
-        'Advanced Performance Analytics',
-        'Weekly Strategy & Optimization',
-        'Custom Integration Development',
-        'Dedicated Success Manager',
-        'SLA Guarantees'
-      ],
-      cta: 'Contact Sales',
+      name: t('pricing.tiers.enterprise.name'),
+      description: t('pricing.tiers.enterprise.description'),
+      price: t('pricing.tiers.enterprise.price'),
+      period: t('pricing.tiers.enterprise.period'),
+      features: t('pricing.tiers.enterprise.features', { returnObjects: true }) as string[],
+      cta: t('pricing.tiers.enterprise.cta'),
       color: 'purple',
       icon: <Shield className="w-6 h-6" />
     }
@@ -162,22 +121,22 @@ export default function Pricing() {
 
   const addOns = [
     {
-      name: 'Advanced Analytics Package',
-      description: 'Deep insights and custom reporting',
-      price: '$1,500/month',
-      features: ['Custom Dashboards', 'Predictive Analytics', 'ROI Tracking']
+      name: t('pricing.addOns.analytics.name'),
+      description: t('pricing.addOns.analytics.description'),
+      price: t('pricing.addOns.analytics.price'),
+      features: [t('pricing.addOns.analytics.features.0'), t('pricing.addOns.analytics.features.1'), t('pricing.addOns.analytics.features.2')]
     },
     {
-      name: 'Premium Support',
-      description: '24/7 support with dedicated success manager',
-      price: '$2,000/month',
-      features: ['24/7 Phone Support', 'Dedicated Manager', 'Priority Response']
+      name: t('pricing.addOns.support.name'),
+      description: t('pricing.addOns.support.description'),
+      price: t('pricing.addOns.support.price'),
+      features: [t('pricing.addOns.support.features.0'), t('pricing.addOns.support.features.1'), t('pricing.addOns.support.features.2')]
     },
     {
-      name: 'Custom AI Development',
-      description: 'Bespoke AI solutions for unique requirements',
-      price: 'Starting at $10,000',
-      features: ['Custom Model Training', 'Specialized Algorithms', 'Ongoing Optimization']
+      name: t('pricing.addOns.custom.name'),
+      description: t('pricing.addOns.custom.description'),
+      price: t('pricing.addOns.custom.price'),
+      features: [t('pricing.addOns.custom.features.0'), t('pricing.addOns.custom.features.1'), t('pricing.addOns.custom.features.2')]
     }
   ];
 
@@ -185,25 +144,25 @@ export default function Pricing() {
     const errors: string[] = [];
     
     if (!roiInputs.currentCosts || roiInputs.currentCosts <= 0) {
-      errors.push('Annual operating costs must be greater than 0');
+      errors.push(t('pricing.roi.errors.currentCosts'));
     }
     if (!roiInputs.employeeCount || roiInputs.employeeCount <= 0) {
-      errors.push('Employee count must be greater than 0');
+      errors.push(t('pricing.roi.errors.employeeCount'));
     }
     if (!roiInputs.avgSalary || roiInputs.avgSalary <= 0) {
-      errors.push('Average salary must be greater than 0');
+      errors.push(t('pricing.roi.errors.avgSalary'));
     }
     if (roiInputs.timeSpentOnTasks < 0 || roiInputs.timeSpentOnTasks > 100) {
-      errors.push('Time spent on tasks must be between 0 and 100%');
+      errors.push(t('pricing.roi.errors.timeSpent'));
     }
     if (roiInputs.errorRate < 0 || roiInputs.errorRate > 100) {
-      errors.push('Error rate must be between 0 and 100%');
+      errors.push(t('pricing.roi.errors.errorRate'));
     }
     if (extendedInputs.implementationTimeline < 1 || extendedInputs.implementationTimeline > 36) {
-      errors.push('Implementation timeline must be between 1 and 36 months');
+      errors.push(t('pricing.roi.errors.timeline'));
     }
     if (extendedInputs.expectedEfficiencyGain < 0 || extendedInputs.expectedEfficiencyGain > 100) {
-      errors.push('Expected efficiency gain must be between 0 and 100%');
+      errors.push(t('pricing.roi.errors.efficiency'));
     }
     
     return errors;
@@ -215,18 +174,18 @@ export default function Pricing() {
       industry: extendedInputs.industry,
       annual_revenue: roiInputs.currentCosts * 4, // Estimate revenue as 4x costs
       current_processes: [
-        'Manual data entry',
-        'Report generation',
-        'Customer communication',
-        'Quality control'
+        t('pricing.roi.currentProcesses.0'),
+        t('pricing.roi.currentProcesses.1'),
+        t('pricing.roi.currentProcesses.2'),
+        t('pricing.roi.currentProcesses.3')
       ],
       employee_count: roiInputs.employeeCount,
       automation_readiness: extendedInputs.automationReadiness,
       processes_to_automate: [
-        'Data processing',
-        'Report automation',
-        'Customer service',
-        'Quality assurance'
+        t('pricing.roi.processesToAutomate.0'),
+        t('pricing.roi.processesToAutomate.1'),
+        t('pricing.roi.processesToAutomate.2'),
+        t('pricing.roi.processesToAutomate.3')
       ],
       expected_efficiency_gain: extendedInputs.expectedEfficiencyGain,
       implementation_timeline: extendedInputs.implementationTimeline,
@@ -281,7 +240,7 @@ export default function Pricing() {
       };
     } catch (error) {
       console.error('ROI calculation error:', error);
-      setROIError(error instanceof Error ? error.message : 'Failed to calculate ROI');
+      setROIError(error instanceof Error ? error.message : t('pricing.roi.errors.calculationFailed'));
       
       // Fallback to original calculation
       const { currentCosts, employeeCount, avgSalary, timeSpentOnTasks, errorRate } = roiInputs;

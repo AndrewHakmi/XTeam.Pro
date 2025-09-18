@@ -433,7 +433,7 @@ export default function Admin() {
             {t('admin.login.title')}
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Sign in to access the admin dashboard
+            {t('admin.login.subtitle')}
           </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleLogin}>
@@ -493,7 +493,7 @@ export default function Admin() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading admin dashboard...</p>
+          <p className="text-gray-600">{t('admin.loading')}</p>
         </div>
       </div>
     );
@@ -515,18 +515,18 @@ export default function Admin() {
                 className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center"
               >
                 <Download className="w-4 h-4 mr-2" />
-                Export Data
+                {t('admin.dashboard.exportData')}
               </button>
               <button className="bg-gray-100 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors flex items-center">
                 <Settings className="w-4 h-4 mr-2" />
-                Settings
+                {t('admin.dashboard.settings')}
               </button>
               <button
                 onClick={handleLogout}
                 className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors flex items-center"
               >
                 <LogOut className="w-4 h-4 mr-2" />
-                Logout
+                {t('admin.actions.logout')}
               </button>
             </div>
           </div>
@@ -534,10 +534,10 @@ export default function Admin() {
           {/* Navigation Tabs */}
           <div className="flex space-x-8 border-b border-gray-200">
             {[
-              { id: 'dashboard', label: 'Dashboard', icon: BarChart },
-              { id: 'submissions', label: 'Submissions', icon: FileText },
-              { id: 'analytics', label: 'Analytics', icon: TrendingUp },
-              { id: 'configuration', label: 'Configuration', icon: Settings }
+              { id: 'dashboard', label: t('admin.actions.dashboard'), icon: BarChart },
+              { id: 'submissions', label: t('admin.actions.submissions'), icon: FileText },
+              { id: 'analytics', label: t('admin.tabs.analytics'), icon: TrendingUp },
+              { id: 'configuration', label: t('admin.actions.configuration'), icon: Settings }
             ].map((tab) => {
               const Icon = tab.icon;
               return (
@@ -572,7 +572,7 @@ export default function Admin() {
               <div className="bg-white rounded-2xl shadow-lg p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-gray-600">Total Submissions</p>
+                    <p className="text-sm font-medium text-gray-600">{t('admin.dashboard.stats.users')}</p>
                     <p className="text-3xl font-bold text-gray-900">{dashboardStats.total_audits}</p>
                   </div>
                   <div className="bg-blue-100 p-3 rounded-full">
@@ -587,7 +587,7 @@ export default function Admin() {
               <div className="bg-white rounded-2xl shadow-lg p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-gray-600">Completed Audits</p>
+                    <p className="text-sm font-medium text-gray-600">{t('admin.dashboard.stats.audits')}</p>
                     <p className="text-3xl font-bold text-gray-900">{dashboardStats.audits_this_month}</p>
                   </div>
                   <div className="bg-green-100 p-3 rounded-full">
@@ -602,7 +602,7 @@ export default function Admin() {
               <div className="bg-white rounded-2xl shadow-lg p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-gray-600">Avg. Maturity Score</p>
+                    <p className="text-sm font-medium text-gray-600">{t('admin.dashboard.stats.avgMaturityScore')}</p>
                     <p className="text-3xl font-bold text-gray-900">{dashboardStats.average_audit_score}</p>
                   </div>
                   <div className="bg-yellow-100 p-3 rounded-full">
@@ -610,14 +610,14 @@ export default function Admin() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <span className="text-yellow-600 text-sm font-medium">Industry average: 58</span>
+                  <span className="text-yellow-600 text-sm font-medium">{t('admin.dashboard.stats.industryAverage')}</span>
                 </div>
               </div>
               
               <div className="bg-white rounded-2xl shadow-lg p-6">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-medium text-gray-600">Total Est. ROI</p>
+                    <p className="text-sm font-medium text-gray-600">{t('admin.dashboard.stats.totalEstROI')}</p>
                     <p className="text-3xl font-bold text-gray-900">{dashboardStats.total_contacts}</p>
                   </div>
                   <div className="bg-purple-100 p-3 rounded-full">
@@ -625,7 +625,7 @@ export default function Admin() {
                   </div>
                 </div>
                 <div className="mt-4">
-                  <span className="text-purple-600 text-sm font-medium">Conversion rate: {dashboardStats.conversion_rate}%</span>
+                  <span className="text-purple-600 text-sm font-medium">{t('admin.dashboard.stats.conversionRate', { rate: dashboardStats.conversion_rate })}</span>
                 </div>
               </div>
             </div>
@@ -634,7 +634,7 @@ export default function Admin() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {/* Monthly Submissions */}
               <div className="bg-white rounded-2xl shadow-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-6">Monthly Submissions &amp; Conversions</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-6">{t('admin.dashboard.charts.monthlySubmissions')}</h3>
                 <ResponsiveContainer width="100%" height={300}>
                   <AreaChart data={mockAnalytics.monthlySubmissions}>
                     <CartesianGrid strokeDasharray="3 3" />
@@ -649,7 +649,7 @@ export default function Admin() {
               
               {/* Industry Breakdown */}
               <div className="bg-white rounded-2xl shadow-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-6">Industry Breakdown</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-6">{t('admin.dashboard.charts.industryBreakdown')}</h3>
                 <ResponsiveContainer width="100%" height={300}>
                   <PieChart>
                     <Pie
@@ -688,7 +688,7 @@ export default function Admin() {
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <input
                       type="text"
-                      placeholder="Search submissions..."
+                      placeholder={t('admin.dashboard.search.placeholder')}
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -701,10 +701,10 @@ export default function Admin() {
                     onChange={(e) => setStatusFilter(e.target.value)}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   >
-                    <option value="all">All Status</option>
-                    <option value="pending">Pending</option>
-                    <option value="processing">Processing</option>
-                    <option value="completed">Completed</option>
+                    <option value="all">{t('admin.dashboard.filters.allStatus')}</option>
+                    <option value="pending">{t('admin.dashboard.filters.pending')}</option>
+                    <option value="processing">{t('admin.dashboard.filters.processing')}</option>
+                    <option value="completed">{t('admin.dashboard.filters.completed')}</option>
                   </select>
                 </div>
               </div>
@@ -717,28 +717,28 @@ export default function Admin() {
                   <thead className="bg-gray-50">
                     <tr>
                       <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Company
+                        {t('admin.dashboard.table.company')}
                       </th>
                       <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Contact
+                        {t('admin.dashboard.table.contact')}
                       </th>
                       <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Industry
+                        {t('admin.dashboard.table.industry')}
                       </th>
                       <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Status
+                        {t('admin.dashboard.table.status')}
                       </th>
                       <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Maturity Score
+                        {t('admin.dashboard.table.maturityScore')}
                       </th>
                       <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Est. ROI
+                        {t('admin.dashboard.table.estROI')}
                       </th>
                       <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Submitted
+                        {t('admin.dashboard.table.submitted')}
                       </th>
                       <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Actions
+                        {t('admin.dashboard.table.actions')}
                       </th>
                     </tr>
                   </thead>
@@ -832,7 +832,7 @@ export default function Admin() {
           >
             {/* Company Size Distribution */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">Company Size Distribution</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-6">{t('admin.dashboard.charts.companySizeDistribution')}</h3>
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={mockAnalytics.companySizeBreakdown}>
                   <CartesianGrid strokeDasharray="3 3" />
@@ -846,7 +846,7 @@ export default function Admin() {
 
             {/* Maturity Score Distribution */}
             <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">Maturity Score Distribution</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-6">{t('admin.dashboard.charts.maturityScoreDistribution')}</h3>
               <ResponsiveContainer width="100%" height={300}>
                 <BarChart data={mockAnalytics.maturityScoreDistribution}>
                   <CartesianGrid strokeDasharray="3 3" />
@@ -874,7 +874,7 @@ export default function Admin() {
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                     <input
                       type="text"
-                      placeholder="Search contacts..."
+                      placeholder={t('admin.dashboard.search.contactsPlaceholder')}
                       className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
@@ -889,22 +889,22 @@ export default function Admin() {
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Contact
+                      {t('admin.dashboard.table.contact')}
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Company
+                      {t('admin.dashboard.table.company')}
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Inquiry Type
+                      {t('admin.dashboard.table.inquiryType')}
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Status
+                      {t('admin.dashboard.table.status')}
                     </th>
                     <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Date
+                      {t('admin.dashboard.table.date')}
                     </th>
                     <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Actions
+                      {t('admin.dashboard.table.actions')}
                     </th>
                   </tr>
                 </thead>
@@ -966,36 +966,36 @@ export default function Admin() {
             className="space-y-8"
           >
             <div className="bg-white rounded-2xl shadow-lg p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">Audit Configuration</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-6">{t('admin.dashboard.configuration.title')}</h3>
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      AI Model
+                      {t('admin.dashboard.configuration.aiModel')}
                     </label>
                     <select 
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       value={configuration.ai_model}
                       onChange={(e) => setConfiguration({ ...configuration, ai_model: e.target.value })}
                     >
-                      <option value="gpt-4">GPT-4</option>
-                      <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
-                      <option value="claude-3">Claude 3</option>
+                      <option value="gpt-4">{t('admin.dashboard.configuration.models.gpt4')}</option>
+                      <option value="gpt-3.5-turbo">{t('admin.dashboard.configuration.models.gpt35')}</option>
+                      <option value="claude-3">{t('admin.dashboard.configuration.models.claude')}</option>
                     </select>
                   </div>
                   
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Analysis Depth
+                      {t('admin.dashboard.configuration.analysisDepth')}
                     </label>
                     <select 
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       value={configuration.analysis_depth}
                       onChange={(e) => setConfiguration({ ...configuration, analysis_depth: e.target.value })}
                     >
-                      <option value="basic">Basic</option>
-                      <option value="standard">Standard</option>
-                      <option value="comprehensive">Comprehensive</option>
+                      <option value="basic">{t('admin.dashboard.configuration.depths.basic')}</option>
+                      <option value="standard">{t('admin.dashboard.configuration.depths.standard')}</option>
+                      <option value="comprehensive">{t('admin.dashboard.configuration.depths.comprehensive')}</option>
                     </select>
                   </div>
                 </div>
@@ -1012,7 +1012,7 @@ export default function Admin() {
                         checked={configuration.pdf_generation_enabled}
                         onChange={(e) => setConfiguration({ ...configuration, pdf_generation_enabled: e.target.checked })}
                       />
-                      <span className="ml-2 text-sm text-gray-700">Enable PDF report generation</span>
+                      <span className="ml-2 text-sm text-gray-700">{t('admin.dashboard.configuration.pdfGeneration')}</span>
                     </label>
                   </div>
                   
@@ -1027,14 +1027,14 @@ export default function Admin() {
                         checked={configuration.auto_send_reports}
                         onChange={(e) => setConfiguration({ ...configuration, auto_send_reports: e.target.checked })}
                       />
-                      <span className="ml-2 text-sm text-gray-700">Automatically send reports to clients</span>
+                      <span className="ml-2 text-sm text-gray-700">{t('admin.dashboard.configuration.autoSend')}</span>
                     </label>
                   </div>
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Notifications
+                    {t('admin.dashboard.configuration.emailNotifications')}
                   </label>
                   <div className="space-y-2">
                     <label className="flex items-center">
@@ -1087,7 +1087,7 @@ export default function Admin() {
                 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Custom Analysis Prompts
+                    {t('admin.dashboard.configuration.customPrompts')}
                   </label>
                   <textarea
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -1110,13 +1110,13 @@ export default function Admin() {
                     onClick={() => loadConfiguration()}
                     className="px-6 py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
                   >
-                    Reset
+                    {t('admin.dashboard.configuration.reset')}
                   </button>
                   <button 
                     onClick={() => updateConfiguration(configuration)}
                     className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
                   >
-                    Save Configuration
+                    {t('admin.dashboard.configuration.save')}
                   </button>
                 </div>
               </div>

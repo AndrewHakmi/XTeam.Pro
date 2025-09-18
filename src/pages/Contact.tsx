@@ -66,7 +66,7 @@ export default function Contact() {
   const contactInfo: ContactInfo[] = [
     {
       icon: <Mail className="w-6 h-6" />,
-      title: 'Email Us',
+      title: t('contact.info.email'),
       details: ['hello@xteam.pro', 'support@xteam.pro'],
       action: {
         text: 'Send Email',
@@ -75,7 +75,7 @@ export default function Contact() {
     },
     {
       icon: <Phone className="w-6 h-6" />,
-      title: 'Call Us',
+      title: t('contact.info.phone'),
       details: ['+1 (555) 123-4567', 'Available 24/7'],
       action: {
         text: 'Call Now',
@@ -84,7 +84,7 @@ export default function Contact() {
     },
     {
       icon: <MapPin className="w-6 h-6" />,
-      title: 'Visit Us',
+      title: t('contact.info.address'),
       details: ['123 Innovation Drive', 'San Francisco, CA 94105'],
       action: {
         text: 'Get Directions',
@@ -93,44 +93,44 @@ export default function Contact() {
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: 'Business Hours',
+      title: t('contact.info.hours'),
       details: ['Mon-Fri: 9:00 AM - 6:00 PM PST', 'Emergency support: 24/7']
     }
   ];
 
   const inquiryTypes = [
-    { value: 'consultation', label: 'Free Consultation' },
-    { value: 'demo', label: 'Product Demo' },
-    { value: 'partnership', label: 'Partnership Opportunity' },
-    { value: 'support', label: 'Technical Support' },
-    { value: 'other', label: 'Other' }
+    { value: 'consultation', label: t('contact.form.inquiryType.consultation') },
+    { value: 'demo', label: t('contact.form.inquiryType.demo') },
+    { value: 'partnership', label: t('contact.form.inquiryType.partnership') },
+    { value: 'support', label: t('contact.form.inquiryType.support') },
+    { value: 'other', label: t('contact.form.inquiryType.other') }
   ];
 
   const serviceOptions = [
-    'AI Strategy Consulting',
-    'Process Automation',
-    'Custom AI Development',
-    'Data Analytics & Insights',
-    'AI Training & Support',
-    'Digital Transformation'
+    t('contact.form.services.strategy'),
+    t('contact.form.services.automation'),
+    t('contact.form.services.development'),
+    t('contact.form.services.analytics'),
+    t('contact.form.services.training'),
+    t('contact.form.services.transformation')
   ];
 
   const budgetRanges = [
-    'Under $50K',
-    '$50K - $100K',
-    '$100K - $250K',
-    '$250K - $500K',
-    '$500K+',
-    'Not sure yet'
+    t('contact.form.budget.under50k'),
+    t('contact.form.budget.50k-100k'),
+    t('contact.form.budget.100k-250k'),
+    t('contact.form.budget.250k-500k'),
+    t('contact.form.budget.over500k'),
+    t('contact.form.budget.notSure')
   ];
 
   const timelineOptions = [
-    'ASAP (Within 1 month)',
-    '1-3 months',
-    '3-6 months',
-    '6-12 months',
-    '12+ months',
-    'Just exploring options'
+    t('contact.form.timeline.asap'),
+    t('contact.form.timeline.quarter'),
+    t('contact.form.timeline.halfYear'),
+    t('contact.form.timeline.year'),
+    t('contact.form.timeline.longTerm'),
+    t('contact.form.timeline.exploring')
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -166,47 +166,47 @@ export default function Contact() {
     
     // Required fields validation
     if (!formData.name.trim()) {
-      errors.name = 'Name is required';
+      errors.name = t('contact.form.validation.nameRequired');
     } else if (formData.name.trim().length > 100) {
-      errors.name = 'Name must be less than 100 characters';
+      errors.name = t('contact.form.validation.nameTooLong');
     }
     
     if (!formData.email.trim()) {
-      errors.email = 'Email is required';
+      errors.email = t('contact.form.validation.emailRequired');
     } else {
       const emailRegex = /^[\w\.-]+@[\w\.-]+\.\w+$/;
       if (!emailRegex.test(formData.email)) {
-        errors.email = 'Please enter a valid email address';
+        errors.email = t('contact.form.validation.emailInvalid');
       }
     }
     
     if (!formData.company.trim()) {
-      errors.company = 'Company name is required';
+      errors.company = t('contact.form.validation.companyRequired');
     } else if (formData.company.trim().length > 200) {
-      errors.company = 'Company name must be less than 200 characters';
+      errors.company = t('contact.form.validation.companyTooLong');
     }
     
     if (!formData.subject.trim()) {
-      errors.subject = 'Subject is required';
+      errors.subject = t('contact.form.validation.subjectRequired');
     } else if (formData.subject.trim().length > 200) {
-      errors.subject = 'Subject must be less than 200 characters';
+      errors.subject = t('contact.form.validation.subjectTooLong');
     }
     
     if (!formData.message.trim()) {
-      errors.message = 'Message is required';
+      errors.message = t('contact.form.validation.messageRequired');
     } else if (formData.message.trim().length < 10) {
-      errors.message = 'Message must be at least 10 characters';
+      errors.message = t('contact.form.validation.messageTooShort');
     } else if (formData.message.trim().length > 2000) {
-      errors.message = 'Message must be less than 2000 characters';
+      errors.message = t('contact.form.validation.messageTooLong');
     }
     
     // Optional field validation
     if (formData.phone && formData.phone.length > 20) {
-      errors.phone = 'Phone number must be less than 20 characters';
+      errors.phone = t('contact.form.validation.phoneTooLong');
     }
     
     if (formData.position && formData.position.length > 100) {
-      errors.position = 'Position must be less than 100 characters';
+      errors.position = t('contact.form.validation.positionTooLong');
     }
     
     return errors;
@@ -330,18 +330,17 @@ export default function Contact() {
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
             <CheckCircle className="w-8 h-8 text-green-600" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Thank You!</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('contact.success.title')}</h2>
           <p className="text-gray-600 mb-4">
-            We've received your message and will get back to you within 24 hours. 
-            Our team is excited to discuss how we can help transform your business with AI.
+            {t('contact.success.message')}
           </p>
           {submitSuccess && (
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
               <p className="text-sm text-blue-800">
-                <strong>Reference ID:</strong> {submitSuccess.inquiry_id}
+                <strong>{t('contact.success.referenceId')}:</strong> {submitSuccess.inquiry_id}
               </p>
               <p className="text-sm text-blue-600 mt-1">
-                Status: {submitSuccess.status}
+                {t('contact.success.status')}: {submitSuccess.status}
               </p>
             </div>
           )}
@@ -366,7 +365,7 @@ export default function Contact() {
             }}
             className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
           >
-            Send Another Message
+            {t('contact.success.sendAnother')}
           </button>
         </motion.div>
       </div>
@@ -440,10 +439,9 @@ export default function Contact() {
               className="bg-white rounded-2xl shadow-xl p-8"
             >
               <div className="mb-8">
-                <h2 className="text-3xl font-bold text-gray-900 mb-4">Get Started Today</h2>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('contact.form.title')}</h2>
                 <p className="text-gray-600">
-                  Tell us about your project and we'll provide a customized solution 
-                  that fits your needs and budget.
+                  {t('contact.form.description')}
                 </p>
               </div>
 
@@ -452,7 +450,7 @@ export default function Contact() {
                 <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
                   <div className="flex items-center">
                     <AlertCircle className="w-5 h-5 text-red-600 mr-2" />
-                    <p className="text-red-800 font-medium">Error</p>
+                    <p className="text-red-800 font-medium">{t('contact.form.error')}</p>
                   </div>
                   <p className="text-red-700 mt-1">{submitError}</p>
                 </div>
@@ -462,7 +460,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Full Name *
+                      {t('contact.form.fullName')} *
                     </label>
                     <input
                       type="text"
@@ -480,7 +478,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address *
+                      {t('contact.form.emailAddress')} *
                     </label>
                     <input
                       type="email"
@@ -501,7 +499,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                        Company Name *
+                        {t('contact.form.companyName')} *
                       </label>
                       <input
                         type="text"
@@ -519,7 +517,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                        Phone Number
+                        {t('contact.form.phoneNumber')}
                       </label>
                       <input
                         type="tel"
@@ -650,7 +648,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Details * <span className="text-sm text-gray-500">({formData.message.length}/2000)</span>
+                    {t('contact.form.message')} * <span className="text-sm text-gray-500">({formData.message.length}/2000)</span>
                   </label>
                   <textarea
                       id="message"
@@ -695,7 +693,7 @@ export default function Contact() {
                       Sending Message...
                     </div>
                   ) : (
-                    t('contact.form.send')
+                    t('contact.form.sendMessage')
                   )}
                 </button>
               </form>

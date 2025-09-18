@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, Users, Clock, DollarSign, Target, CheckCircle, ExternalLink, Filter, Search } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 interface CaseStudy {
   id: string;
@@ -28,108 +29,109 @@ interface CaseStudy {
 }
 
 export default function CaseStudies() {
+  const { t } = useTranslation();
   const [selectedIndustry, setSelectedIndustry] = useState<string>('All');
   const [searchTerm, setSearchTerm] = useState<string>('');
 
   const caseStudies: CaseStudy[] = [
     {
       id: 'ecommerce-automation',
-      title: 'E-commerce Customer Service Revolution',
-      company: 'TechMart Solutions',
-      industry: 'E-commerce',
-      challenge: 'TechMart was struggling with 10,000+ daily customer inquiries, leading to 48-hour response times and declining customer satisfaction. Their support team was overwhelmed, and operational costs were skyrocketing.',
-      solution: 'Implemented a comprehensive AI customer service system with intelligent chatbots, automated email responses, and smart ticket routing. The system integrated with their existing CRM and knowledge base.',
-      implementation: 'Deployed in phases over 6 weeks with staff training and gradual rollout to ensure smooth transition.',
+      title: t('caseStudies.studies.ecommerceAutomation.title'),
+      company: t('caseStudies.studies.ecommerceAutomation.company'),
+      industry: t('caseStudies.studies.ecommerceAutomation.industry'),
+      challenge: t('caseStudies.studies.ecommerceAutomation.challenge'),
+      solution: t('caseStudies.studies.ecommerceAutomation.solution'),
+      implementation: t('caseStudies.studies.ecommerceAutomation.implementation'),
       results: [
-        { metric: 'Response Time', value: '2 minutes', improvement: '95% faster' },
-        { metric: 'Customer Satisfaction', value: '94%', improvement: '+40%' },
-        { metric: 'Support Tickets Resolved', value: '85%', improvement: 'Automated' },
-        { metric: 'Annual Cost Savings', value: '$750K', improvement: '60% reduction' }
+        { metric: t('caseStudies.studies.ecommerceAutomation.results.responseTime.metric'), value: t('caseStudies.studies.ecommerceAutomation.results.responseTime.value'), improvement: t('caseStudies.studies.ecommerceAutomation.results.responseTime.improvement') },
+        { metric: t('caseStudies.studies.ecommerceAutomation.results.satisfaction.metric'), value: t('caseStudies.studies.ecommerceAutomation.results.satisfaction.value'), improvement: t('caseStudies.studies.ecommerceAutomation.results.satisfaction.improvement') },
+        { metric: t('caseStudies.studies.ecommerceAutomation.results.tickets.metric'), value: t('caseStudies.studies.ecommerceAutomation.results.tickets.value'), improvement: t('caseStudies.studies.ecommerceAutomation.results.tickets.improvement') },
+        { metric: t('caseStudies.studies.ecommerceAutomation.results.savings.metric'), value: t('caseStudies.studies.ecommerceAutomation.results.savings.value'), improvement: t('caseStudies.studies.ecommerceAutomation.results.savings.improvement') }
       ],
       testimonial: {
-        quote: "The AI system transformed our customer service completely. We went from drowning in tickets to providing instant, accurate responses. Our customers love it, and our team can focus on complex issues that truly need human attention.",
-        author: 'Sarah Chen',
-        position: 'VP of Customer Experience'
+        quote: t('caseStudies.studies.ecommerceAutomation.testimonial.quote'),
+        author: t('caseStudies.studies.ecommerceAutomation.testimonial.author'),
+        position: t('caseStudies.studies.ecommerceAutomation.testimonial.position')
       },
-      tags: ['Customer Service', 'Automation', 'Cost Reduction'],
-      timeline: '6 weeks',
-      investment: '$150K',
-      roi: '500% in 8 months',
+      tags: [t('caseStudies.tags.customerService'), t('caseStudies.tags.automation'), t('caseStudies.tags.costReduction')],
+      timeline: t('caseStudies.studies.ecommerceAutomation.timeline'),
+      investment: t('caseStudies.studies.ecommerceAutomation.investment'),
+      roi: t('caseStudies.studies.ecommerceAutomation.roi'),
       featured: true
     },
     {
       id: 'healthcare-analytics',
-      title: 'Healthcare Data Analytics Transformation',
-      company: 'MedCare Regional',
-      industry: 'Healthcare',
-      challenge: 'Manual patient data analysis was taking 4-6 hours per case, delaying treatment decisions and increasing administrative burden on medical staff.',
-      solution: 'Deployed AI-powered analytics system for patient data processing, diagnostic assistance, and automated reporting with integration to existing EMR systems.',
-      implementation: 'Phased implementation over 8 weeks with comprehensive staff training and compliance validation.',
+      title: t('caseStudies.studies.healthcareAnalytics.title'),
+      company: t('caseStudies.studies.healthcareAnalytics.company'),
+      industry: t('caseStudies.studies.healthcareAnalytics.industry'),
+      challenge: t('caseStudies.studies.healthcareAnalytics.challenge'),
+      solution: t('caseStudies.studies.healthcareAnalytics.solution'),
+      implementation: t('caseStudies.studies.healthcareAnalytics.implementation'),
       results: [
-        { metric: 'Data Processing Time', value: '15 minutes', improvement: '85% faster' },
-        { metric: 'Diagnostic Accuracy', value: '96%', improvement: '+25%' },
-        { metric: 'Administrative Time', value: '3 hours/day', improvement: '70% reduction' },
-        { metric: 'Annual Savings', value: '$2.1M', improvement: '45% cost reduction' }
+        { metric: t('caseStudies.studies.healthcareAnalytics.results.accuracy.metric'), value: t('caseStudies.studies.healthcareAnalytics.results.accuracy.value'), improvement: t('caseStudies.studies.healthcareAnalytics.results.accuracy.improvement') },
+        { metric: t('caseStudies.studies.healthcareAnalytics.results.waitTime.metric'), value: t('caseStudies.studies.healthcareAnalytics.results.waitTime.value'), improvement: t('caseStudies.studies.healthcareAnalytics.results.waitTime.improvement') },
+        { metric: t('caseStudies.studies.healthcareAnalytics.results.cost.metric'), value: t('caseStudies.studies.healthcareAnalytics.results.cost.value'), improvement: t('caseStudies.studies.healthcareAnalytics.results.cost.improvement') },
+        { metric: t('caseStudies.studies.healthcareAnalytics.results.efficiency.metric'), value: t('caseStudies.studies.healthcareAnalytics.results.efficiency.value'), improvement: t('caseStudies.studies.healthcareAnalytics.results.efficiency.improvement') }
       ],
       testimonial: {
-        quote: "This AI system has revolutionized how we handle patient data. What used to take hours now takes minutes, and the accuracy improvements have directly impacted patient outcomes. It's been a game-changer for our entire organization.",
-        author: 'Dr. Michael Rodriguez',
-        position: 'Chief Medical Officer'
+        quote: t('caseStudies.studies.healthcareAnalytics.testimonial.quote'),
+        author: t('caseStudies.studies.healthcareAnalytics.testimonial.author'),
+        position: t('caseStudies.studies.healthcareAnalytics.testimonial.position')
       },
-      tags: ['Healthcare', 'Data Analytics', 'Efficiency'],
-      timeline: '8 weeks',
-      investment: '$300K',
-      roi: '700% in 12 months',
+      tags: [t('caseStudies.tags.healthcare'), t('caseStudies.tags.dataAnalytics'), t('caseStudies.tags.efficiency')],
+      timeline: t('caseStudies.studies.healthcareAnalytics.timeline'),
+      investment: t('caseStudies.studies.healthcareAnalytics.investment'),
+      roi: t('caseStudies.studies.healthcareAnalytics.roi'),
       featured: true
     },
     {
       id: 'financial-fraud-detection',
-      title: 'Advanced Fraud Detection System',
-      company: 'SecureBank Corp',
-      industry: 'Financial Services',
-      challenge: 'Traditional fraud detection was catching only 60% of fraudulent transactions, resulting in $5M annual losses and numerous false positives affecting customer experience.',
-      solution: 'Implemented AI-driven fraud detection with real-time transaction analysis, behavioral pattern recognition, and automated risk scoring.',
-      implementation: 'Gradual rollout over 10 weeks with extensive testing and regulatory compliance validation.',
+      title: t('caseStudies.studies.financialFraudDetection.title'),
+      company: t('caseStudies.studies.financialFraudDetection.company'),
+      industry: t('caseStudies.studies.financialFraudDetection.industry'),
+      challenge: t('caseStudies.studies.financialFraudDetection.challenge'),
+      solution: t('caseStudies.studies.financialFraudDetection.solution'),
+      implementation: t('caseStudies.studies.financialFraudDetection.implementation'),
       results: [
-        { metric: 'Fraud Detection Rate', value: '98.5%', improvement: '+38.5%' },
-        { metric: 'False Positives', value: '2%', improvement: '80% reduction' },
-        { metric: 'Processing Speed', value: '50ms', improvement: '95% faster' },
-        { metric: 'Annual Loss Prevention', value: '$12M', improvement: '85% reduction' }
+        { metric: t('caseStudies.studies.financialFraudDetection.results.detectionRate.metric'), value: t('caseStudies.studies.financialFraudDetection.results.detectionRate.value'), improvement: t('caseStudies.studies.financialFraudDetection.results.detectionRate.improvement') },
+        { metric: t('caseStudies.studies.financialFraudDetection.results.falsePositives.metric'), value: t('caseStudies.studies.financialFraudDetection.results.falsePositives.value'), improvement: t('caseStudies.studies.financialFraudDetection.results.falsePositives.improvement') },
+        { metric: t('caseStudies.studies.financialFraudDetection.results.processingTime.metric'), value: t('caseStudies.studies.financialFraudDetection.results.processingTime.value'), improvement: t('caseStudies.studies.financialFraudDetection.results.processingTime.improvement') },
+        { metric: t('caseStudies.studies.financialFraudDetection.results.savings.metric'), value: t('caseStudies.studies.financialFraudDetection.results.savings.value'), improvement: t('caseStudies.studies.financialFraudDetection.results.savings.improvement') }
       ],
       testimonial: {
-        quote: "The AI fraud detection system has exceeded all our expectations. We're catching fraud we never could before while dramatically improving the customer experience by reducing false alarms.",
-        author: 'Jennifer Walsh',
-        position: 'Head of Risk Management'
+        quote: t('caseStudies.studies.financialFraudDetection.testimonial.quote'),
+        author: t('caseStudies.studies.financialFraudDetection.testimonial.author'),
+        position: t('caseStudies.studies.financialFraudDetection.testimonial.position')
       },
-      tags: ['Financial Services', 'Fraud Detection', 'Risk Management'],
-      timeline: '10 weeks',
-      investment: '$500K',
-      roi: '2400% in 6 months',
+      tags: [t('caseStudies.tags.financialServices'), t('caseStudies.tags.fraudDetection'), t('caseStudies.tags.riskManagement')],
+      timeline: t('caseStudies.studies.financialFraudDetection.timeline'),
+      investment: t('caseStudies.studies.financialFraudDetection.investment'),
+      roi: t('caseStudies.studies.financialFraudDetection.roi'),
       featured: false
     },
     {
       id: 'manufacturing-optimization',
-      title: 'Smart Manufacturing Optimization',
-      company: 'AutoParts Industries',
-      industry: 'Manufacturing',
-      challenge: 'Frequent equipment breakdowns and quality control issues were causing 20% production downtime and $3M annual losses in defective products.',
-      solution: 'Deployed predictive maintenance AI and automated quality control systems with IoT sensor integration and real-time monitoring.',
-      implementation: 'Phased deployment across 3 production lines over 12 weeks with minimal disruption to operations.',
+      title: t('caseStudies.studies.manufacturingOptimization.title'),
+      company: t('caseStudies.studies.manufacturingOptimization.company'),
+      industry: t('caseStudies.studies.manufacturingOptimization.industry'),
+      challenge: t('caseStudies.studies.manufacturingOptimization.challenge'),
+      solution: t('caseStudies.studies.manufacturingOptimization.solution'),
+      implementation: t('caseStudies.studies.manufacturingOptimization.implementation'),
       results: [
-        { metric: 'Production Downtime', value: '4%', improvement: '80% reduction' },
-        { metric: 'Defect Rate', value: '0.5%', improvement: '90% improvement' },
-        { metric: 'Maintenance Costs', value: '$800K', improvement: '60% reduction' },
-        { metric: 'Overall Efficiency', value: '94%', improvement: '+35%' }
+        { metric: t('caseStudies.studies.manufacturingOptimization.results.downtime.metric'), value: t('caseStudies.studies.manufacturingOptimization.results.downtime.value'), improvement: t('caseStudies.studies.manufacturingOptimization.results.downtime.improvement') },
+        { metric: t('caseStudies.studies.manufacturingOptimization.results.defectRate.metric'), value: t('caseStudies.studies.manufacturingOptimization.results.defectRate.value'), improvement: t('caseStudies.studies.manufacturingOptimization.results.defectRate.improvement') },
+        { metric: t('caseStudies.studies.manufacturingOptimization.results.maintenance.metric'), value: t('caseStudies.studies.manufacturingOptimization.results.maintenance.value'), improvement: t('caseStudies.studies.manufacturingOptimization.results.maintenance.improvement') },
+        { metric: t('caseStudies.studies.manufacturingOptimization.results.efficiency.metric'), value: t('caseStudies.studies.manufacturingOptimization.results.efficiency.value'), improvement: t('caseStudies.studies.manufacturingOptimization.results.efficiency.improvement') }
       ],
       testimonial: {
-        quote: "The predictive maintenance system has transformed our operations. We now fix issues before they become problems, and our quality has never been better. The ROI was evident within the first quarter.",
-        author: 'Robert Kim',
-        position: 'Operations Director'
+        quote: t('caseStudies.studies.manufacturingOptimization.testimonial.quote'),
+        author: t('caseStudies.studies.manufacturingOptimization.testimonial.author'),
+        position: t('caseStudies.studies.manufacturingOptimization.testimonial.position')
       },
-      tags: ['Manufacturing', 'Predictive Maintenance', 'Quality Control'],
-      timeline: '12 weeks',
-      investment: '$400K',
-      roi: '650% in 10 months',
+      tags: [t('caseStudies.tags.manufacturing'), t('caseStudies.tags.predictiveMaintenance'), t('caseStudies.tags.qualityControl')],
+      timeline: t('caseStudies.studies.manufacturingOptimization.timeline'),
+      investment: t('caseStudies.studies.manufacturingOptimization.investment'),
+      roi: t('caseStudies.studies.manufacturingOptimization.roi'),
       featured: false
     },
     {
@@ -208,12 +210,10 @@ export default function CaseStudies() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl font-bold text-gray-900 mb-6">
-              Real Results from
-              <span className="text-blue-600"> Real Businesses</span>
+              {t('caseStudies.title')}
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Discover how companies across industries have transformed their operations, 
-              reduced costs, and accelerated growth with our AI automation solutions.
+              {t('caseStudies.description')}
             </p>
           </motion.div>
 
@@ -225,20 +225,20 @@ export default function CaseStudies() {
             className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
           >
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
-              <div className="text-gray-600">Successful Projects</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">{t('caseStudies.stats.projects.value')}</div>
+              <div className="text-gray-600">{t('caseStudies.stats.projects.label')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">$50M+</div>
-              <div className="text-gray-600">Cost Savings Generated</div>
+              <div className="text-4xl font-bold text-green-600 mb-2">{t('caseStudies.stats.savings.value')}</div>
+              <div className="text-gray-600">{t('caseStudies.stats.savings.label')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">85%</div>
-              <div className="text-gray-600">Average Efficiency Gain</div>
+              <div className="text-4xl font-bold text-purple-600 mb-2">{t('caseStudies.stats.efficiency.value')}</div>
+              <div className="text-gray-600">{t('caseStudies.stats.efficiency.label')}</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-orange-600 mb-2">6 Months</div>
-              <div className="text-gray-600">Average ROI Timeline</div>
+              <div className="text-4xl font-bold text-orange-600 mb-2">{t('caseStudies.stats.timeline.value')}</div>
+              <div className="text-gray-600">{t('caseStudies.stats.timeline.label')}</div>
             </div>
           </motion.div>
         </div>
@@ -252,9 +252,9 @@ export default function CaseStudies() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Success Stories</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('caseStudies.title')}</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Highlighted case studies showcasing transformational results across different industries.
+              {t('caseStudies.subtitle')}
             </p>
           </motion.div>
 
@@ -295,7 +295,7 @@ export default function CaseStudies() {
                     <span className="font-semibold text-green-600">{study.roi}</span>
                   </div>
                   <button className="text-blue-600 hover:text-blue-700 font-medium text-sm flex items-center">
-                    Read Full Story
+                    {t('caseStudies.viewDetails')}
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </button>
                 </div>
@@ -313,9 +313,9 @@ export default function CaseStudies() {
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">All Case Studies</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('caseStudies.title')}</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Explore our complete portfolio of successful AI implementations across various industries.
+              {t('caseStudies.description')}
             </p>
           </motion.div>
 
@@ -343,7 +343,7 @@ export default function CaseStudies() {
               <Search className="w-5 h-5 text-gray-500" />
               <input
                 type="text"
-                placeholder="Search case studies..."
+                placeholder={t('caseStudies.searchPlaceholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -421,18 +421,17 @@ export default function CaseStudies() {
             animate={{ opacity: 1, y: 0 }}
             className="text-white"
           >
-            <h2 className="text-4xl font-bold mb-4">Ready to Write Your Success Story?</h2>
+            <h2 className="text-4xl font-bold mb-4">{t('caseStudies.cta.title')}</h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Join the growing list of companies transforming their operations with AI. 
-              Let's discuss how we can help you achieve similar results.
+              {t('caseStudies.cta.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center">
-                Start Your AI Journey
+                {t('caseStudies.cta.button')}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
               <button className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                Download Case Study PDF
+                {t('caseStudies.cta.downloadButton')}
               </button>
             </div>
           </motion.div>

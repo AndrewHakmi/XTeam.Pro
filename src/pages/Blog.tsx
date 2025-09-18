@@ -47,108 +47,108 @@ export default function Blog() {
   const blogPosts: BlogPost[] = [
     {
       id: 'ai-transformation-manufacturing',
-      title: 'How AI Transformed Manufacturing Operations at TechCorp: A Complete Case Study',
-      excerpt: 'Discover how TechCorp reduced production costs by 35% and increased efficiency by 50% through strategic AI implementation in their manufacturing processes.',
+      title: t('blog.posts.aiTransformationManufacturing.title'),
+      excerpt: t('blog.posts.aiTransformationManufacturing.excerpt'),
       content: 'Full article content would go here...',
       author: {
-        name: 'Sarah Chen',
-        avatar: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Asian%20woman%20CEO%20in%20business%20attire%2C%20confident%20smile&image_size=square',
-        role: 'CEO & Co-Founder'
+        name: t('blog.authors.sarahChen.name'),
+         avatar: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Asian%20woman%20CEO%20in%20business%20attire%2C%20confident%20smile&image_size=square',
+         role: t('blog.authors.sarahChen.role')
       },
       publishedAt: '2024-01-15',
       readTime: 8,
       category: 'case-studies',
-      tags: ['Manufacturing', 'AI Implementation', 'ROI', 'Process Optimization'],
+      tags: [t('blog.tags.manufacturing'), t('blog.tags.implementation'), t('blog.tags.roi'), t('blog.tags.processOptimization')],
       image: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Modern%20manufacturing%20facility%20with%20AI%20robots%20and%20automated%20systems%2C%20high%20tech%20industrial%20setting&image_size=landscape_16_9',
       featured: true,
       views: 2847
     },
     {
       id: 'future-of-ai-business',
-      title: 'The Future of AI in Business: 10 Trends That Will Shape 2024',
-      excerpt: 'Explore the emerging AI trends that will revolutionize business operations, from autonomous decision-making to predictive analytics.',
+      title: t('blog.posts.futureOfAiBusiness.title'),
+      excerpt: t('blog.posts.futureOfAiBusiness.excerpt'),
       content: 'Full article content would go here...',
       author: {
-        name: 'Dr. Michael Rodriguez',
-        avatar: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Hispanic%20male%20CTO%20with%20glasses%2C%20friendly%20expression&image_size=square',
-        role: 'CTO & Co-Founder'
+        name: t('blog.authors.drMichaelRodriguez.name'),
+         avatar: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Hispanic%20male%20CTO%20with%20glasses%2C%20friendly%20expression&image_size=square',
+         role: t('blog.authors.drMichaelRodriguez.role')
       },
       publishedAt: '2024-01-12',
       readTime: 6,
       category: 'ai-strategy',
-      tags: ['AI Trends', 'Business Strategy', 'Future Tech', 'Innovation'],
+      tags: [t('blog.tags.aiTrends'), t('blog.tags.businessStrategy'), t('blog.tags.futureTech'), t('blog.tags.innovation')],
       image: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Futuristic%20business%20office%20with%20AI%20holographic%20displays%20and%20data%20visualizations%2C%20modern%20technology&image_size=landscape_16_9',
       featured: true,
       views: 1923
     },
     {
       id: 'automation-roi-calculator',
-      title: 'Building an ROI Calculator for Process Automation: A Step-by-Step Guide',
-      excerpt: 'Learn how to create a comprehensive ROI calculator that helps businesses understand the financial impact of automation initiatives.',
+      title: t('blog.posts.automationRoiCalculator.title'),
+      excerpt: t('blog.posts.automationRoiCalculator.excerpt'),
       content: 'Full article content would go here...',
       author: {
-        name: 'Jennifer Walsh',
-        avatar: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Caucasian%20woman%20VP%20in%20business%20suit%2C%20warm%20smile&image_size=square',
-        role: 'VP of Customer Success'
+        name: t('blog.authors.jenniferWalsh.name'),
+         avatar: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Caucasian%20woman%20VP%20in%20business%20suit%2C%20warm%20smile&image_size=square',
+         role: t('blog.authors.jenniferWalsh.role')
       },
       publishedAt: '2024-01-10',
       readTime: 12,
       category: 'tutorials',
-      tags: ['ROI', 'Automation', 'Business Analysis', 'Financial Planning'],
+      tags: [t('blog.tags.roi'), t('blog.tags.automation'), t('blog.tags.businessAnalysis'), t('blog.tags.financialPlanning')],
       image: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Business%20dashboard%20with%20ROI%20calculations%20and%20financial%20charts%2C%20professional%20analytics%20interface&image_size=landscape_16_9',
       featured: false,
       views: 1456
     },
     {
       id: 'ai-customer-service',
-      title: 'Revolutionizing Customer Service with AI: Best Practices and Implementation',
-      excerpt: 'Discover how leading companies are using AI to enhance customer experiences while reducing operational costs.',
+      title: t('blog.posts.aiCustomerService.title'),
+      excerpt: t('blog.posts.aiCustomerService.excerpt'),
       content: 'Full article content would go here...',
       author: {
-        name: 'David Kim',
+        name: t('blog.authors.davidKim.name'),
         avatar: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Korean%20male%20engineer%20in%20casual%20business%20attire%2C%20confident%20look&image_size=square',
-        role: 'Head of AI Engineering'
+        role: t('blog.authors.davidKim.role')
       },
       publishedAt: '2024-01-08',
       readTime: 7,
       category: 'automation',
-      tags: ['Customer Service', 'AI Chatbots', 'CX Optimization', 'Implementation'],
+      tags: [t('blog.tags.customerService'), t('blog.tags.aiChatbots'), t('blog.tags.cxOptimization'), t('blog.tags.implementation')],
       image: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Modern%20customer%20service%20center%20with%20AI%20chatbot%20interfaces%20and%20support%20agents&image_size=landscape_16_9',
       featured: false,
       views: 1789
     },
     {
       id: 'data-driven-decisions',
-      title: 'Making Data-Driven Decisions: How AI Analytics Transform Business Intelligence',
-      excerpt: 'Learn how AI-powered analytics platforms are helping businesses make smarter, faster decisions based on real-time data insights.',
+      title: t('blog.posts.dataDrivenDecisions.title'),
+      excerpt: t('blog.posts.dataDrivenDecisions.excerpt'),
       content: 'Full article content would go here...',
       author: {
-        name: 'Amanda Foster',
+        name: t('blog.authors.amandaFoster.name'),
         avatar: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20African%20American%20woman%20product%20manager%2C%20bright%20smile&image_size=square',
-        role: 'Head of Product'
+        role: t('blog.authors.amandaFoster.role')
       },
       publishedAt: '2024-01-05',
       readTime: 9,
       category: 'ai-strategy',
-      tags: ['Data Analytics', 'Business Intelligence', 'Decision Making', 'AI Insights'],
+      tags: [t('blog.tags.dataAnalytics'), t('blog.tags.businessIntelligence'), t('blog.tags.decisionMaking'), t('blog.tags.aiInsights')],
       image: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Advanced%20data%20analytics%20dashboard%20with%20AI%20insights%20and%20business%20intelligence%20charts&image_size=landscape_16_9',
       featured: false,
       views: 2134
     },
     {
       id: 'small-business-ai',
-      title: 'AI for Small Businesses: Affordable Solutions That Drive Growth',
-      excerpt: 'Explore cost-effective AI solutions specifically designed for small and medium businesses looking to compete with larger enterprises.',
+      title: t('blog.posts.smallBusinessAi.title'),
+      excerpt: t('blog.posts.smallBusinessAi.excerpt'),
       content: 'Full article content would go here...',
       author: {
-        name: 'Robert Johnson',
+        name: t('blog.authors.robertJohnson.name'),
         avatar: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20headshot%20of%20Caucasian%20male%20VP%20sales%20in%20navy%20suit%2C%20professional%20smile&image_size=square',
-        role: 'VP of Sales'
+        role: t('blog.authors.robertJohnson.role')
       },
       publishedAt: '2024-01-03',
       readTime: 5,
       category: 'industry-insights',
-      tags: ['Small Business', 'Affordable AI', 'Growth Strategy', 'SMB Solutions'],
+      tags: [t('blog.tags.smallBusiness'), t('blog.tags.affordableAi'), t('blog.tags.growthStrategy'), t('blog.tags.smbSolutions')],
       image: 'https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Small%20business%20office%20with%20modern%20AI%20technology%20and%20digital%20tools%2C%20entrepreneurial%20setting&image_size=landscape_16_9',
       featured: false,
       views: 987
@@ -294,7 +294,7 @@ export default function Blog() {
               <div className="bg-gray-50 rounded-2xl p-6 sticky top-8">
                 {/* Search */}
                 <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Search Articles</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('blog.searchArticles')}</h3>
                   <div className="relative">
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                     <input
@@ -309,7 +309,7 @@ export default function Blog() {
 
                 {/* Categories */}
                 <div className="mb-8">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Categories</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('blog.categoriesTitle')}</h3>
                   <div className="space-y-2">
                     {categories.map((category) => (
                       <button
@@ -336,7 +336,7 @@ export default function Blog() {
 
                 {/* Sort */}
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Sort By</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('blog.sortByTitle')}</h3>
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value)}
@@ -354,9 +354,9 @@ export default function Blog() {
             <div className="lg:w-3/4">
               <div className="flex justify-between items-center mb-8">
                 <h2 className="text-3xl font-bold text-gray-900">
-                  All Articles
+                  {t('blog.allArticles')}
                   <span className="text-lg font-normal text-gray-500 ml-2">
-                    ({filteredPosts.length} {filteredPosts.length === 1 ? 'article' : 'articles'})
+                    ({filteredPosts.length} {filteredPosts.length === 1 ? t('blog.article') : t('blog.articles')})
                   </span>
                 </h2>
               </div>
@@ -364,8 +364,8 @@ export default function Blog() {
               {filteredPosts.length === 0 ? (
                 <div className="text-center py-12">
                   <BookOpen className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">No articles found</h3>
-                  <p className="text-gray-600">Try adjusting your search terms or filters.</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{t('blog.noArticlesFound')}</h3>
+                  <p className="text-gray-600">{t('blog.tryAdjusting')}</p>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -386,7 +386,7 @@ export default function Blog() {
                         {post.featured && (
                           <div className="absolute top-4 left-4">
                             <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                              Featured
+                              {t('blog.featured')}
                             </span>
                           </div>
                         )}
@@ -399,7 +399,7 @@ export default function Blog() {
                           </span>
                           <div className="flex items-center text-gray-500 text-sm">
                             <TrendingUp className="w-4 h-4 mr-1" />
-                            {post.views.toLocaleString()} views
+                            {post.views.toLocaleString()} {t('blog.viewsText')}
                           </div>
                         </div>
                         
@@ -442,7 +442,7 @@ export default function Blog() {
                             to={`/blog/${post.id}`}
                             className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm"
                           >
-                            Read
+                            {t('blog.read')}
                             <ArrowRight className="w-4 h-4 ml-1" />
                           </Link>
                         </div>
@@ -464,22 +464,22 @@ export default function Blog() {
             animate={{ opacity: 1, y: 0 }}
             className="text-white max-w-2xl mx-auto"
           >
-            <h2 className="text-4xl font-bold mb-4">Stay Updated with AI Insights</h2>
+            <h2 className="text-4xl font-bold mb-4">{t('blog.newsletter.title')}</h2>
             <p className="text-xl mb-8 opacity-90">
-              Get the latest AI trends, case studies, and implementation guides delivered to your inbox.
+              {t('blog.newsletter.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder={t('blog.newsletter.placeholder')}
                 className="flex-1 px-6 py-4 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
               />
               <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Subscribe
+                {t('blog.newsletter.subscribe')}
               </button>
             </div>
             <p className="text-sm opacity-75 mt-4">
-              No spam, unsubscribe at any time. We respect your privacy.
+              {t('blog.newsletter.privacy')}
             </p>
           </motion.div>
         </div>

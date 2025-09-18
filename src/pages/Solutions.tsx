@@ -37,132 +37,132 @@ export default function Solutions() {
   const solutions: Solution[] = [
     {
       id: 'customer-service',
-      title: 'AI Customer Service Automation',
-      description: 'Transform your customer support with intelligent chatbots and automated response systems that provide 24/7 assistance.',
+      title: t('solutions.items.customer-service.title'),
+      description: t('solutions.items.customer-service.description'),
       icon: <Headphones className="w-8 h-8" />,
       benefits: [
-        '24/7 customer support availability',
-        'Reduce response time by 90%',
-        'Handle 80% of inquiries automatically',
-        'Improve customer satisfaction scores'
+        t('solutions.items.customer-service.benefits.0'),
+        t('solutions.items.customer-service.benefits.1'),
+        t('solutions.items.customer-service.benefits.2'),
+        t('solutions.items.customer-service.benefits.3')
       ],
       useCases: [
-        'Live chat automation',
-        'Email response automation',
-        'FAQ and knowledge base integration',
-        'Ticket routing and prioritization'
+        t('solutions.items.customer-service.useCases.0'),
+        t('solutions.items.customer-service.useCases.1'),
+        t('solutions.items.customer-service.useCases.2'),
+        t('solutions.items.customer-service.useCases.3')
       ],
-      roi: '300% ROI within 6 months',
-      implementation: '2-4 weeks'
+      roi: t('solutions.items.customer-service.roi'),
+      implementation: t('solutions.items.customer-service.implementation')
     },
     {
       id: 'data-analysis',
-      title: 'Intelligent Data Analytics',
-      description: 'Automate data processing, analysis, and reporting to uncover insights and drive data-driven decision making.',
+      title: t('solutions.items.data-analysis.title'),
+      description: t('solutions.items.data-analysis.description'),
       icon: <BarChart3 className="w-8 h-8" />,
       benefits: [
-        'Real-time data processing',
-        'Automated report generation',
-        'Predictive analytics capabilities',
-        'Reduce manual analysis time by 85%'
+        t('solutions.items.data-analysis.benefits.0'),
+        t('solutions.items.data-analysis.benefits.1'),
+        t('solutions.items.data-analysis.benefits.2'),
+        t('solutions.items.data-analysis.benefits.3')
       ],
       useCases: [
-        'Sales performance analysis',
-        'Customer behavior insights',
-        'Financial reporting automation',
-        'Market trend analysis'
+        t('solutions.items.data-analysis.useCases.0'),
+        t('solutions.items.data-analysis.useCases.1'),
+        t('solutions.items.data-analysis.useCases.2'),
+        t('solutions.items.data-analysis.useCases.3')
       ],
-      roi: '250% ROI within 4 months',
-      implementation: '3-6 weeks'
+      roi: t('solutions.items.data-analysis.roi'),
+      implementation: t('solutions.items.data-analysis.implementation')
     },
     {
       id: 'workflow-automation',
-      title: 'Business Process Automation',
-      description: 'Streamline repetitive tasks and workflows with intelligent automation that adapts to your business needs.',
+      title: t('solutions.items.workflow-automation.title'),
+      description: t('solutions.items.workflow-automation.description'),
       icon: <Zap className="w-8 h-8" />,
       benefits: [
-        'Eliminate manual repetitive tasks',
-        'Reduce processing time by 70%',
-        'Minimize human errors',
-        'Improve operational efficiency'
+        t('solutions.items.workflow-automation.benefits.0'),
+        t('solutions.items.workflow-automation.benefits.1'),
+        t('solutions.items.workflow-automation.benefits.2'),
+        t('solutions.items.workflow-automation.benefits.3')
       ],
       useCases: [
-        'Invoice processing',
-        'Employee onboarding',
-        'Inventory management',
-        'Quality assurance workflows'
+        t('solutions.items.workflow-automation.useCases.0'),
+        t('solutions.items.workflow-automation.useCases.1'),
+        t('solutions.items.workflow-automation.useCases.2'),
+        t('solutions.items.workflow-automation.useCases.3')
       ],
-      roi: '400% ROI within 3 months',
-      implementation: '1-3 weeks'
+      roi: t('solutions.items.workflow-automation.roi'),
+      implementation: t('solutions.items.workflow-automation.implementation')
     },
     {
       id: 'content-generation',
-      title: 'AI Content & Communication',
-      description: 'Generate high-quality content, emails, and communications automatically while maintaining your brand voice.',
+      title: t('solutions.items.content-generation.title'),
+      description: t('solutions.items.content-generation.description'),
       icon: <FileText className="w-8 h-8" />,
       benefits: [
-        'Generate content 10x faster',
-        'Maintain consistent brand voice',
-        'Personalize communications at scale',
-        'Reduce content creation costs by 60%'
+        t('solutions.items.content-generation.benefits.0'),
+        t('solutions.items.content-generation.benefits.1'),
+        t('solutions.items.content-generation.benefits.2'),
+        t('solutions.items.content-generation.benefits.3')
       ],
       useCases: [
-        'Marketing content creation',
-        'Email campaign automation',
-        'Social media management',
-        'Documentation generation'
+        t('solutions.items.content-generation.useCases.0'),
+        t('solutions.items.content-generation.useCases.1'),
+        t('solutions.items.content-generation.useCases.2'),
+        t('solutions.items.content-generation.useCases.3')
       ],
-      roi: '200% ROI within 2 months',
-      implementation: '1-2 weeks'
+      roi: t('solutions.items.content-generation.roi'),
+      implementation: t('solutions.items.content-generation.implementation')
     }
   ];
 
   const industryScenarios: IndustryScenario[] = [
     {
-      industry: 'retail',
-      challenge: 'Managing thousands of customer inquiries and order processing manually',
-      solution: 'AI-powered customer service and order automation system',
+      industry: t('solutions.industryScenarios.retail.industry'),
+      challenge: t('solutions.industryScenarios.retail.challenge'),
+      solution: t('solutions.industryScenarios.retail.solution'),
       results: [
-        '90% reduction in response time',
-        '75% decrease in support tickets',
-        '$500K annual savings in operational costs',
-        '40% increase in customer satisfaction'
+        t('solutions.industryScenarios.retail.results.0'),
+        t('solutions.industryScenarios.retail.results.1'),
+        t('solutions.industryScenarios.retail.results.2'),
+        t('solutions.industryScenarios.retail.results.3')
       ],
       icon: <ShoppingCart className="w-6 h-6" />
     },
     {
-      industry: 'healthcare',
-      challenge: 'Time-consuming patient data analysis and appointment scheduling',
-      solution: 'Intelligent patient management and diagnostic assistance system',
+      industry: t('solutions.industryScenarios.healthcare.industry'),
+      challenge: t('solutions.industryScenarios.healthcare.challenge'),
+      solution: t('solutions.industryScenarios.healthcare.solution'),
       results: [
-        '60% faster patient data processing',
-        '85% reduction in scheduling conflicts',
-        '30% improvement in diagnostic accuracy',
-        '$2M annual cost savings'
+        t('solutions.industryScenarios.healthcare.results.0'),
+        t('solutions.industryScenarios.healthcare.results.1'),
+        t('solutions.industryScenarios.healthcare.results.2'),
+        t('solutions.industryScenarios.healthcare.results.3')
       ],
       icon: <Shield className="w-6 h-6" />
     },
     {
-      industry: 'finance',
-      challenge: 'Manual fraud detection and risk assessment processes',
-      solution: 'AI-driven fraud detection and automated risk analysis',
+      industry: t('solutions.industryScenarios.finance.industry'),
+      challenge: t('solutions.industryScenarios.finance.challenge'),
+      solution: t('solutions.industryScenarios.finance.solution'),
       results: [
-        '95% fraud detection accuracy',
-        '80% reduction in false positives',
-        '$10M prevented in fraudulent transactions',
-        '50% faster loan approval process'
+        t('solutions.industryScenarios.finance.results.0'),
+        t('solutions.industryScenarios.finance.results.1'),
+        t('solutions.industryScenarios.finance.results.2'),
+        t('solutions.industryScenarios.finance.results.3')
       ],
       icon: <DollarSign className="w-6 h-6" />
     },
     {
-      industry: 'manufacturing',
-      challenge: 'Inefficient quality control and predictive maintenance',
-      solution: 'AI-powered quality assurance and maintenance prediction',
+      industry: t('solutions.industryScenarios.manufacturing.industry'),
+      challenge: t('solutions.industryScenarios.manufacturing.challenge'),
+      solution: t('solutions.industryScenarios.manufacturing.solution'),
       results: [
-        '70% reduction in defective products',
-        '60% decrease in unplanned downtime',
-        '$5M savings in maintenance costs',
-        '45% improvement in production efficiency'
+        t('solutions.industryScenarios.manufacturing.results.0'),
+        t('solutions.industryScenarios.manufacturing.results.1'),
+        t('solutions.industryScenarios.manufacturing.results.2'),
+        t('solutions.industryScenarios.manufacturing.results.3')
       ],
       icon: <Target className="w-6 h-6" />
     }
@@ -170,86 +170,116 @@ export default function Solutions() {
 
   const aiAgents: AIAgent[] = [
     {
-      name: 'customerservicebot',
-      description: 'Handles customer inquiries, resolves issues, and escalates complex cases to human agents.',
+      name: t('solutions.aiAgents.customerservicebot.name'),
+      description: t('solutions.aiAgents.customerservicebot.description'),
       capabilities: [
-        'Natural language understanding',
-        'Multi-channel support (chat, email, phone)',
-        'Knowledge base integration',
-        'Sentiment analysis',
-        'Automated ticket routing'
+        t('solutions.aiAgents.customerservicebot.capabilities.0'),
+        t('solutions.aiAgents.customerservicebot.capabilities.1'),
+        t('solutions.aiAgents.customerservicebot.capabilities.2'),
+        t('solutions.aiAgents.customerservicebot.capabilities.3'),
+        t('solutions.aiAgents.customerservicebot.capabilities.4')
       ],
-      industries: ['E-commerce', 'SaaS', 'Retail', 'Healthcare'],
+      industries: [
+        t('solutions.aiAgents.customerservicebot.industries.0'),
+        t('solutions.aiAgents.customerservicebot.industries.1'),
+        t('solutions.aiAgents.customerservicebot.industries.2'),
+        t('solutions.aiAgents.customerservicebot.industries.3')
+      ],
       icon: <MessageSquare className="w-6 h-6" />,
       color: 'bg-blue-500'
     },
     {
-      name: 'dataanalyst',
-      description: 'Processes large datasets, generates insights, and creates automated reports for decision-making.',
+      name: t('solutions.aiAgents.dataanalyst.name'),
+      description: t('solutions.aiAgents.dataanalyst.description'),
       capabilities: [
-        'Real-time data processing',
-        'Predictive analytics',
-        'Automated reporting',
-        'Anomaly detection',
-        'Visualization generation'
+        t('solutions.aiAgents.dataanalyst.capabilities.0'),
+        t('solutions.aiAgents.dataanalyst.capabilities.1'),
+        t('solutions.aiAgents.dataanalyst.capabilities.2'),
+        t('solutions.aiAgents.dataanalyst.capabilities.3'),
+        t('solutions.aiAgents.dataanalyst.capabilities.4')
       ],
-      industries: ['Finance', 'Marketing', 'Operations', 'Sales'],
+      industries: [
+        t('solutions.aiAgents.dataanalyst.industries.0'),
+        t('solutions.aiAgents.dataanalyst.industries.1'),
+        t('solutions.aiAgents.dataanalyst.industries.2'),
+        t('solutions.aiAgents.dataanalyst.industries.3')
+      ],
       icon: <Database className="w-6 h-6" />,
       color: 'bg-green-500'
     },
     {
-      name: 'salesassistant',
-      description: 'Qualifies leads, schedules meetings, and provides personalized product recommendations.',
+      name: t('solutions.aiAgents.salesassistant.name'),
+      description: t('solutions.aiAgents.salesassistant.description'),
       capabilities: [
-        'Lead qualification',
-        'Meeting scheduling',
-        'CRM integration',
-        'Personalized recommendations',
-        'Follow-up automation'
+        t('solutions.aiAgents.salesassistant.capabilities.0'),
+        t('solutions.aiAgents.salesassistant.capabilities.1'),
+        t('solutions.aiAgents.salesassistant.capabilities.2'),
+        t('solutions.aiAgents.salesassistant.capabilities.3'),
+        t('solutions.aiAgents.salesassistant.capabilities.4')
       ],
-      industries: ['B2B Sales', 'Real Estate', 'Insurance', 'Technology'],
+      industries: [
+        t('solutions.aiAgents.salesassistant.industries.0'),
+        t('solutions.aiAgents.salesassistant.industries.1'),
+        t('solutions.aiAgents.salesassistant.industries.2'),
+        t('solutions.aiAgents.salesassistant.industries.3')
+      ],
       icon: <Users className="w-6 h-6" />,
       color: 'bg-purple-500'
     },
     {
-      name: 'contentcreator',
-      description: 'Generates marketing content, emails, and documentation while maintaining brand consistency.',
+      name: t('solutions.aiAgents.contentcreator.name'),
+      description: t('solutions.aiAgents.contentcreator.description'),
       capabilities: [
-        'Content generation',
-        'Brand voice consistency',
-        'Multi-format output',
-        'SEO optimization',
-        'Personalization at scale'
+        t('solutions.aiAgents.contentcreator.capabilities.0'),
+        t('solutions.aiAgents.contentcreator.capabilities.1'),
+        t('solutions.aiAgents.contentcreator.capabilities.2'),
+        t('solutions.aiAgents.contentcreator.capabilities.3'),
+        t('solutions.aiAgents.contentcreator.capabilities.4')
       ],
-      industries: ['Marketing', 'Media', 'E-commerce', 'Education'],
+      industries: [
+        t('solutions.aiAgents.contentcreator.industries.0'),
+        t('solutions.aiAgents.contentcreator.industries.1'),
+        t('solutions.aiAgents.contentcreator.industries.2'),
+        t('solutions.aiAgents.contentcreator.industries.3')
+      ],
       icon: <FileText className="w-6 h-6" />,
       color: 'bg-orange-500'
     },
     {
-      name: 'processautomator',
-      description: 'Automates repetitive business processes and workflows across different departments.',
+      name: t('solutions.aiAgents.processautomator.name'),
+      description: t('solutions.aiAgents.processautomator.description'),
       capabilities: [
-        'Workflow automation',
-        'Document processing',
-        'System integration',
-        'Error handling',
-        'Performance monitoring'
+        t('solutions.aiAgents.processautomator.capabilities.0'),
+        t('solutions.aiAgents.processautomator.capabilities.1'),
+        t('solutions.aiAgents.processautomator.capabilities.2'),
+        t('solutions.aiAgents.processautomator.capabilities.3'),
+        t('solutions.aiAgents.processautomator.capabilities.4')
       ],
-      industries: ['Operations', 'HR', 'Finance', 'Manufacturing'],
+      industries: [
+        t('solutions.aiAgents.processautomator.industries.0'),
+        t('solutions.aiAgents.processautomator.industries.1'),
+        t('solutions.aiAgents.processautomator.industries.2'),
+        t('solutions.aiAgents.processautomator.industries.3')
+      ],
       icon: <Bot className="w-6 h-6" />,
       color: 'bg-red-500'
     },
     {
-      name: 'qualitycontroller',
-      description: 'Analyzes financial data, detects anomalies, and provides investment recommendations.',
+      name: t('solutions.aiAgents.qualitycontroller.name'),
+      description: t('solutions.aiAgents.qualitycontroller.description'),
       capabilities: [
-        'Financial modeling',
-        'Risk assessment',
-        'Fraud detection',
-        'Investment analysis',
-        'Compliance monitoring'
+        t('solutions.aiAgents.qualitycontroller.capabilities.0'),
+        t('solutions.aiAgents.qualitycontroller.capabilities.1'),
+        t('solutions.aiAgents.qualitycontroller.capabilities.2'),
+        t('solutions.aiAgents.qualitycontroller.capabilities.3'),
+        t('solutions.aiAgents.qualitycontroller.capabilities.4')
       ],
-      industries: ['Banking', 'Investment', 'Insurance', 'Fintech'],
+      industries: [
+        t('solutions.aiAgents.qualitycontroller.industries.0'),
+        t('solutions.aiAgents.qualitycontroller.industries.1'),
+        t('solutions.aiAgents.qualitycontroller.industries.2'),
+        t('solutions.aiAgents.qualitycontroller.industries.3')
+      ],
       icon: <Calculator className="w-6 h-6" />,
       color: 'bg-indigo-500'
     }

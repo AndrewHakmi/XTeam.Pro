@@ -328,28 +328,28 @@ export default function AuditResults() {
               <div className="text-2xl font-bold text-green-600 mb-1">
                 ${result.estimated_savings?.toLocaleString() || 'TBD'}
               </div>
-              <div className="text-sm text-gray-600">Annual Savings</div>
+              <div className="text-sm text-gray-600">{t('auditResults.metrics.annualSavings')}</div>
             </div>
             
             <div className="text-center p-4 bg-blue-50 rounded-lg">
               <div className="text-2xl font-bold text-blue-600 mb-1">
                 ${result.implementation_cost?.toLocaleString() || 'TBD'}
               </div>
-              <div className="text-sm text-gray-600">Implementation Cost</div>
+              <div className="text-sm text-gray-600">{t('auditResults.metrics.implementationCost')}</div>
             </div>
             
             <div className="text-center p-4 bg-purple-50 rounded-lg">
               <div className="text-2xl font-bold text-purple-600 mb-1">
                 {result.payback_period || 'TBD'} months
               </div>
-              <div className="text-sm text-gray-600">Payback Period</div>
+              <div className="text-sm text-gray-600">{t('auditResults.metrics.paybackPeriod')}</div>
             </div>
             
             <div className="text-center p-4 bg-orange-50 rounded-lg">
               <div className="text-2xl font-bold text-orange-600 mb-1">
                 {result.automation_potential}%
               </div>
-              <div className="text-sm text-gray-600">Automation Potential</div>
+              <div className="text-sm text-gray-600">{t('auditResults.metrics.automationPotential')}</div>
             </div>
           </div>
 
@@ -361,9 +361,9 @@ export default function AuditResults() {
                 <YAxis />
                 <Tooltip formatter={(value: number) => `$${value.toLocaleString()}`} />
                 <Legend />
-                <Bar dataKey="cost" fill="#ef4444" name="Investment" />
-                <Bar dataKey="savings" fill="#10b981" name="Savings" />
-                <Bar dataKey="net" fill="#3b82f6" name="Net Benefit" />
+                <Bar dataKey="cost" fill="#ef4444" name={t('auditResults.metrics.investment')} />
+                <Bar dataKey="savings" fill="#10b981" name={t('auditResults.metrics.savings')} />
+                <Bar dataKey="net" fill="#3b82f6" name={t('auditResults.metrics.netBenefit')} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -388,7 +388,7 @@ export default function AuditResults() {
                 <PolarAngleAxis dataKey="category" tick={{ fontSize: 12 }} />
                 <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fontSize: 10 }} />
                 <Radar
-                  name="Current Score"
+                  name={t('auditResults.metrics.currentScore')}
                   dataKey="score"
                   stroke="#3b82f6"
                   fill="#3b82f6"
@@ -513,7 +513,7 @@ export default function AuditResults() {
             ) : (
               <div className="text-center py-8 text-gray-500">
                 <Target className="w-12 h-12 mx-auto mb-4 text-gray-300" />
-                <p>Priority areas will be available after analysis completion</p>
+                <p>{t('auditResults.messages.priorityAreasAvailable')}</p>
               </div>
             )}
           </div>
