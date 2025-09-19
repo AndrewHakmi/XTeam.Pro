@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center mb-4">
-              <span className="text-2xl font-bold text-primary">XTeam.Pro</span>
+              <span className="text-2xl font-bold text-primary">{t('common.companyName')}</span>
             </div>
             <p className="text-gray-300 mb-4">
               {t('footer.description')}

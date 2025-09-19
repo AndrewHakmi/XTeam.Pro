@@ -10,12 +10,12 @@ interface Language {
 }
 
 const languages: Language[] = [
-  { code: 'en', name: 'English', flag: '🇺🇸' },
-  { code: 'ru', name: 'Русский', flag: '🇷🇺' }
+  { code: 'en', name: '', flag: '🇺🇸' },
+  { code: 'ru', name: '', flag: '🇷🇺' }
 ];
 
 const LanguageSwitcher: React.FC = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -49,7 +49,7 @@ const LanguageSwitcher: React.FC = () => {
       >
         <div className="flex items-center space-x-2">
           <span className="text-lg">{currentLanguage.flag}</span>
-          <span className="text-sm font-medium hidden sm:inline">{currentLanguage.name}</span>
+          <span className="text-sm font-medium hidden sm:inline">{t(`languages.${currentLanguage.code}`)}</span>
           <span className="text-sm font-medium sm:hidden">{currentLanguage.code.toUpperCase()}</span>
         </div>
         <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
@@ -67,7 +67,7 @@ const LanguageSwitcher: React.FC = () => {
             >
               <div className="flex items-center space-x-2">
                 <span className="text-lg">{language.flag}</span>
-                <span className="text-sm font-medium">{language.name}</span>
+                <span className="text-sm font-medium">{t(`languages.${language.code}`)}</span>
               </div>
               {currentLanguage.code === language.code && (
                 <Check className="w-4 h-4 text-blue-600" />

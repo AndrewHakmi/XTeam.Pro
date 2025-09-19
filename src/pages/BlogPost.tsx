@@ -274,14 +274,14 @@ export default function BlogPost() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
           <BookOpen className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Article Not Found</h1>
-          <p className="text-gray-600 mb-6">The article you're looking for doesn't exist.</p>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">{t('blog.notFound.title')}</h1>
+          <p className="text-gray-600 mb-6">{t('blog.notFound.message')}</p>
           <Link
             to="/blog"
             className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Blog
+            {t('blog.notFound.backButton')}
           </Link>
         </div>
       </div>
@@ -298,7 +298,7 @@ export default function BlogPost() {
             className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Blog
+            {t('blog.notFound.backButton')}
           </Link>
         </div>
       </div>
@@ -382,7 +382,7 @@ export default function BlogPost() {
                   
                   {/* Tags */}
                   <div className="mt-12 pt-8 border-t border-gray-200">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Tags</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('blog.post.tags')}</h3>
                     <div className="flex flex-wrap gap-2">
                       {post.tags.map((tag) => (
                         <span
@@ -418,7 +418,7 @@ export default function BlogPost() {
                 <div className="sticky top-8 space-y-8">
                   {/* Actions */}
                   <div className="bg-white rounded-2xl shadow-lg p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Actions</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('blog.post.actions')}</h3>
                     <div className="space-y-3">
                       <button
                         onClick={() => setIsLiked(!isLiked)}
@@ -429,7 +429,7 @@ export default function BlogPost() {
                         }`}
                       >
                         <Heart className={`w-5 h-5 ${isLiked ? 'fill-current' : ''}`} />
-                        <span>{isLiked ? 'Liked' : 'Like'}</span>
+                        <span>{isLiked ? t('blog.post.liked') : t('blog.post.like')}</span>
                       </button>
                       
                       <button
@@ -441,7 +441,7 @@ export default function BlogPost() {
                         }`}
                       >
                         <Bookmark className={`w-5 h-5 ${isBookmarked ? 'fill-current' : ''}`} />
-                        <span>{isBookmarked ? 'Saved' : 'Save'}</span>
+                        <span>{isBookmarked ? t('blog.post.saved') : t('blog.post.save')}</span>
                       </button>
                       
                       <button
@@ -449,14 +449,14 @@ export default function BlogPost() {
                         className="w-full flex items-center justify-center space-x-2 px-4 py-3 rounded-lg bg-gray-50 text-gray-700 hover:bg-gray-100 transition-colors"
                       >
                         <Share2 className="w-5 h-5" />
-                        <span>Share</span>
+                        <span>{t('blog.post.share')}</span>
                       </button>
                     </div>
                   </div>
                   
                   {/* Related Posts */}
                   <div className="bg-white rounded-2xl shadow-lg p-6">
-                    <h3 className="text-lg font-semibold text-gray-900 mb-4">Related Articles</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('blog.post.relatedArticles')}</h3>
                     <div className="space-y-4">
                       {relatedPosts.map((relatedPost) => (
                         <Link

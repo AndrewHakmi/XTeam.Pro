@@ -26,7 +26,7 @@ const Header: React.FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-primary">XTeam.Pro</span>
+              <span className="text-2xl font-bold text-primary">{t('common.companyName')}</span>
             </a>
           </div>
 

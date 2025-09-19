@@ -614,7 +614,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Budget Range
+                      {t('contact.form.budgetRange')}
                     </label>
                     <select
                       name="budget"
@@ -630,7 +630,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Timeline
+                      {t('contact.form.timeline')}
                     </label>
                     <select
                       name="timeline"
@@ -677,8 +677,7 @@ export default function Contact() {
                     className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                   />
                   <label htmlFor="marketingConsent" className="text-sm text-gray-600">
-                    I agree to receive marketing communications and updates about XTeam.Pro services. 
-                    You can unsubscribe at any time.
+                    {t('contact.form.marketingConsent')}
                   </label>
                 </div>
 
@@ -690,7 +689,7 @@ export default function Contact() {
                   {isSubmitting ? (
                     <div className="flex items-center justify-center">
                       <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
-                      Sending Message...
+                      {t('contact.form.sending')}
                     </div>
                   ) : (
                     t('contact.form.sendMessage')
@@ -711,9 +710,9 @@ export default function Contact() {
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-4">
                     <Calendar className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Schedule a Free Consultation</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{t('contact.consultation.title')}</h3>
                   <p className="text-gray-600">
-                    Book a 30-minute strategy session with our AI experts. No commitment required.
+                    {t('contact.consultation.description')}
                   </p>
                 </div>
                 
@@ -737,14 +736,14 @@ export default function Contact() {
                 </div>
                 
                 <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-4 rounded-lg text-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-colors inline-flex items-center justify-center">
-                  Book Free Consultation
+                  {t('contact.consultation.cta')}
                   <Calendar className="w-5 h-5 ml-2" />
                 </button>
               </div>
 
               {/* FAQ */}
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">{t('contact.faq.title')}</h3>
                 
                 <div className="space-y-4">
                   <div>

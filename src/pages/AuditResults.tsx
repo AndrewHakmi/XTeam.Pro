@@ -223,7 +223,7 @@ export default function AuditResults() {
   // Prepare ROI chart data
   const roiData = [
     {
-      name: 'Current State',
+      name: t('auditResults.metrics.currentState'),
       cost: result.implementation_cost || 0,
       savings: 0,
       net: -(result.implementation_cost || 0)
@@ -243,10 +243,10 @@ export default function AuditResults() {
   };
 
   const getScoreLabel = (score: number) => {
-    if (score >= 80) return 'Excellent';
-    if (score >= 60) return 'Good';
-    if (score >= 40) return 'Fair';
-    return 'Needs Improvement';
+    if (score >= 80) return t('auditResults.ratings.excellent');
+    if (score >= 60) return t('auditResults.ratings.good');
+    if (score >= 40) return t('auditResults.ratings.fair');
+    return t('auditResults.ratings.needsImprovement');
   };
 
   return (
